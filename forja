@@ -242,6 +242,8 @@ def sync_readme(reg: dict | None = None) -> None:
         "forja rm   NAME            # quitar",
         "forja path NAME            # ruta registrada (útil: cd $(forja path X))",
         "forja sync                 # regenerar este README desde registry.json",
+        "forja scan                 # candidatos en ~/ aún sin registrar",
+        "forja missing-gh           # cola de publicación (items sin github)",
         "```",
         "",
     ]
@@ -268,6 +270,30 @@ def cmd_sync(a) -> int:
 
 
 # ── scan suggestions ──────────────────────────────────────────────────────────
+def cmd_missing_gh(a) -> int:
+    """List registered items without a github URL — your 'publish queue'."""
+    reg = load()
+    missing = [i for i in reg["items"] if not (i.get("github") or "").strip()]
+    if not missing:
+        print("todo tiene github URL — nada que publicar."); return 0
+    by_kind: dict[str, list] = {}
+    for it in missing: by_kind.setdefault(it["kind"], []).append(it)
+    print(f"{len(missing)} items sin github:\n")
+    name_w = max(len(i["name"]) for i in missing)
+    for k in sorted(by_kind):
+        print(f"[{k}]")
+        for it in sorted(by_kind[k], key=lambda x: x["name"].lower()):
+            tags = " ".join(f"#{t}" for t in (it.get("tags") or []))
+            print(f"  {it['name'].ljust(name_w)}  {it['path']}"
+                  + (f"  {tags}" if tags else ""))
+        print()
+    print("Para publicar uno desde su directorio:")
+    print("  cd $(forja path NAME) && gh repo create Obrais-cloud/NAME --public --source=. --push")
+    print("Luego añade el URL al catálogo:")
+    print("  forja add --force --name NAME --path $(forja path NAME) --github https://github.com/...")
+    return 0
+
+
 def cmd_scan(a) -> int:
     """Look at ~/ for dirs that look like projects we haven't registered yet."""
     reg = load()
@@ -323,6 +349,8 @@ def build_parser():
     sy.set_defaults(func=cmd_sync)
     sc = sub.add_parser("scan", help="suggest unregistered project dirs in ~/")
     sc.set_defaults(func=cmd_scan)
+    mg = sub.add_parser("missing-gh", help="list registered items that have no github URL (publish queue)")
+    mg.set_defaults(func=cmd_missing_gh)
     return p
 
 

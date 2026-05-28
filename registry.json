@@ -32,6 +32,22 @@
       "created_at": "2026-05-27"
     },
     {
+      "name": "agentcrew",
+      "kind": "service",
+      "path": "/Volumes/X10 Pro_A/AIPR/agentcrew",
+      "description": "Orquestación de agentes basada en Docker (NATS + SQLite). De momento un docker-compose.yml.",
+      "utility": "Cuando arranques la orquestación de agentes para coordinar varios workers vía NATS — está en estado germinal.",
+      "tags": [
+        "agents",
+        "docker",
+        "nats",
+        "orchestration"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
       "name": "codex-appserver-reaper",
       "kind": "service",
       "path": "macmini:/Users/remotework/.openclaw/scripts/codex-appserver-reaper.py",
@@ -46,6 +62,23 @@
       "github": null,
       "version": null,
       "created_at": "2026-05-27"
+    },
+    {
+      "name": "fillos-mission-control",
+      "kind": "service",
+      "path": "/Volumes/X10 Pro_A/AIPR/fillos-mission-control",
+      "description": "Dashboard Next.js 16 de tracking de submissions para proyectos documentales. Vercel KV + Claude AI para generar drafts. Privado en GitHub, desplegado en fillos-mission-control.vercel.app.",
+      "utility": "Para gestionar todas las submissions de Fillos do Vento (festivales, grants, prensa, distribución) sin Notion/Airtable.",
+      "tags": [
+        "documentary",
+        "nextjs",
+        "vercel",
+        "fillos-do-vento",
+        "docuflow"
+      ],
+      "github": "https://github.com/Obrais-cloud/fillos-mission-control",
+      "version": null,
+      "created_at": "2026-05-28"
     },
     {
       "name": "chromacut",
@@ -239,6 +272,22 @@
       "created_at": "2026-05-28"
     },
     {
+      "name": "localeval",
+      "kind": "tool",
+      "path": "/Volumes/X10 Pro_A/AIPR/localeval",
+      "description": "CLI Python para benchmarking/eval de modelos Ollama locales; suite de 34 preguntas (math/reasoning/coding/general), auto-scoring, output de leaderboard.",
+      "utility": "Para evaluar rápido un modelo nuevo en tu suite estándar de 34 preguntas y meterlo en la leaderboard.",
+      "tags": [
+        "ollama",
+        "eval",
+        "benchmark",
+        "leaderboard"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
       "name": "localrag",
       "kind": "tool",
       "path": "/Users/braisrevalderia/localrag",
@@ -270,6 +319,37 @@
       "created_at": "2026-05-28"
     },
     {
+      "name": "olcaps",
+      "kind": "tool",
+      "path": "/Volumes/X10 Pro_A/AIPR/olcaps",
+      "description": "Capability scanner para Ollama — detecta qué soporta cada modelo: vision, tools, thinking, embeddings, code. Usa /api/show + heurísticas; flags --watch (live refresh) y --compare model1 model2 (diff side-by-side).",
+      "utility": "Cuando descargas un modelo nuevo y necesitas saber rápido qué capacidades tiene antes de meterlo en un agente o pipeline.",
+      "tags": [
+        "ollama",
+        "capabilities",
+        "fleet"
+      ],
+      "github": "https://github.com/Obrais-cloud/olcaps",
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "olla",
+      "kind": "tool",
+      "path": "/Volumes/X10 Pro_A/AIPR/olla",
+      "description": "Launcher unificado, status dashboard y health checker de todo el ecosistema ollaX.",
+      "utility": "El punto de entrada cuando ya tienes muchas herramientas ollaX y necesitas un único comando que las descubra y arranque.",
+      "tags": [
+        "ollama",
+        "launcher",
+        "meta",
+        "fleet"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
       "name": "ollabench",
       "kind": "tool",
       "path": "/Users/braisrevalderia/ollabench",
@@ -296,6 +376,37 @@
         "chat",
         "web",
         "fleet"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollaclean",
+      "kind": "tool",
+      "path": "/Volumes/X10 Pro_A/AIPR/ollaclean",
+      "description": "CLI de higiene de modelos Ollama — rastrea staleness, comprueba actualizaciones, analiza disco con conciencia de shared blobs.",
+      "utility": "Cuando el disco está lleno y necesitas saber qué modelos puedes borrar sin romper otros que comparten blobs.",
+      "tags": [
+        "ollama",
+        "disk",
+        "maintenance",
+        "fleet"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollacode",
+      "kind": "tool",
+      "path": "/Volumes/X10 Pro_A/AIPR/ollacode",
+      "description": "Encuentra el mejor modelo local para Claude Code, con tests de compatibilidad con la API de Anthropic.",
+      "utility": "Cuando configuras Claude Code con un backend local y necesitas saber qué modelo encaja mejor en la API de Anthropic.",
+      "tags": [
+        "ollama",
+        "claude-code",
+        "compatibility"
       ],
       "github": null,
       "version": null,
@@ -344,6 +455,22 @@
         "fleet",
         "web",
         "monitoring"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "olladiff",
+      "kind": "tool",
+      "path": "/Volumes/X10 Pro_A/AIPR/olladiff",
+      "description": "Regression tester — toma snapshots de resultados de eval y detecta cambios de calidad entre versiones de modelos.",
+      "utility": "Cuando un modelo recibe update y necesitas saber si la calidad para TUS tests bajó o subió.",
+      "tags": [
+        "ollama",
+        "eval",
+        "regression",
+        "quality"
       ],
       "github": null,
       "version": null,
@@ -413,6 +540,38 @@
       "created_at": "2026-05-28"
     },
     {
+      "name": "ollafit",
+      "kind": "tool",
+      "path": "/Volumes/X10 Pro_A/AIPR/ollafit",
+      "description": "Context window advisor para Apple Silicon — calcula num_ctx seguro para no reventar VRAM.",
+      "utility": "ANTES de cargar un modelo grande en M-series: calcula el num_ctx máximo seguro para tu RAM unificada.",
+      "tags": [
+        "ollama",
+        "apple-silicon",
+        "vram",
+        "context"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollafleet",
+      "kind": "tool",
+      "path": "/Volumes/X10 Pro_A/AIPR/ollafleet",
+      "description": "Proxy inteligente que hace que múltiples instancias de Ollama actúen como una sola con routing inteligente.",
+      "utility": "Cuando quieres una única URL para tus clientes que reparta entre nodos del fleet sin que ellos sepan que hay varios.",
+      "tags": [
+        "ollama",
+        "proxy",
+        "fleet",
+        "routing"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
       "name": "ollaflow",
       "kind": "tool",
       "path": "/Users/braisrevalderia/ollaflow",
@@ -455,6 +614,22 @@
         "proxy",
         "analytics",
         "cost"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollama-fleet-mcp",
+      "kind": "tool",
+      "path": "/Volumes/X10 Pro_A/AIPR/ollama-fleet-mcp",
+      "description": "MCP server fleet-aware para Claude Code con routing inteligente y comparación de modelos.",
+      "utility": "Cuando usas Claude Code y quieres exponer el fleet local como tools MCP (routing + bench desde dentro del agente).",
+      "tags": [
+        "ollama",
+        "mcp",
+        "claude-code",
+        "fleet"
       ],
       "github": null,
       "version": null,
@@ -554,6 +729,21 @@
       "created_at": "2026-05-28"
     },
     {
+      "name": "ollapipe",
+      "kind": "tool",
+      "path": "/Volumes/X10 Pro_A/AIPR/ollapipe",
+      "description": "Pipeline builder — encadena prompts a través de varios modelos secuencialmente.",
+      "utility": "Cuando una tarea necesita varias pasadas con modelos distintos (extraer → razonar → reformatear) en un solo comando.",
+      "tags": [
+        "ollama",
+        "pipeline",
+        "workflow"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
       "name": "ollaprompt",
       "kind": "tool",
       "path": "/Users/braisrevalderia/ollaprompt",
@@ -564,6 +754,22 @@
         "prompts",
         "template",
         "history"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollarag",
+      "kind": "tool",
+      "path": "/Volumes/X10 Pro_A/AIPR/ollarag",
+      "description": "RAG local 'dead-simple' — consulta tu codebase con Ollama, sin vector DB.",
+      "utility": "Cuando quieres hacer Q&A sobre un repo o un corpus de notas sin levantar Qdrant/Chroma/etc.",
+      "tags": [
+        "ollama",
+        "rag",
+        "codebase",
+        "local"
       ],
       "github": null,
       "version": null,
@@ -633,6 +839,37 @@
       "created_at": "2026-05-28"
     },
     {
+      "name": "ollatag",
+      "kind": "tool",
+      "path": "/Volumes/X10 Pro_A/AIPR/ollatag",
+      "description": "Etiqueta modelos por caso de uso y luego encuentra el mejor modelo para cualquier tarea.",
+      "utility": "Cuando tienes 30 modelos descargados y quieres elegir rápido por tarea ('para razonar', 'para resumir', 'para código').",
+      "tags": [
+        "ollama",
+        "tagging",
+        "discovery"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollatest",
+      "kind": "tool",
+      "path": "/Volumes/X10 Pro_A/AIPR/ollatest",
+      "description": "Genera pytest tests para ficheros Python usando modelos locales.",
+      "utility": "Cuando empiezas un módulo Python sin tests y quieres una primera batería razonable generada localmente.",
+      "tags": [
+        "ollama",
+        "python",
+        "testing",
+        "dev"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
       "name": "ollathink",
       "kind": "tool",
       "path": "/Users/braisrevalderia/ollathink",
@@ -647,6 +884,22 @@
       "github": null,
       "version": "0.1.0",
       "created_at": "2026-05-27"
+    },
+    {
+      "name": "ollausage",
+      "kind": "tool",
+      "path": "/Volumes/X10 Pro_A/AIPR/ollausage",
+      "description": "Track de uso de tokens vía proxy transparente; calcula ahorro vs API cloud.",
+      "utility": "Cuando necesitas un número 'cuántos tokens consumí, cuánto me habría costado en cloud' para justificar el fleet.",
+      "tags": [
+        "ollama",
+        "proxy",
+        "analytics",
+        "cost"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
     },
     {
       "name": "ollaverse",
@@ -681,6 +934,22 @@
       "created_at": "2026-05-28"
     },
     {
+      "name": "ollawatch",
+      "kind": "tool",
+      "path": "/Volumes/X10 Pro_A/AIPR/ollawatch",
+      "description": "Dashboard de terminal en tiempo real para monitorizar varias instancias de Ollama simultáneamente.",
+      "utility": "Cuando trabajas con varios nodos del fleet y quieres ver carga/modelos en vivo en una pestaña.",
+      "tags": [
+        "ollama",
+        "fleet",
+        "monitoring",
+        "tui"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
       "name": "panoforge",
       "kind": "tool",
       "path": "/Users/braisrevalderia/panoforge",
@@ -697,6 +966,22 @@
       "github": "https://github.com/Obrais-cloud/panoforge",
       "version": "0.8.0",
       "created_at": "2026-05-27"
+    },
+    {
+      "name": "promptcmp",
+      "kind": "tool",
+      "path": "/Volumes/X10 Pro_A/AIPR/promptcmp",
+      "description": "CLI Python para comparar respuestas de varios modelos Ollama locales lado-a-lado; streaming en paralelo, strip de <think>, fallback secuencial para modelos grandes, export markdown.",
+      "utility": "Cuando dudas entre 3-4 modelos para una tarea concreta: mismo prompt, comparación visual + markdown para luego decidir.",
+      "tags": [
+        "ollama",
+        "compare",
+        "quality",
+        "markdown"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
     },
     {
       "name": "remote-terminal-pwa",
@@ -789,6 +1074,23 @@
         "fillos-do-vento"
       ],
       "github": "https://github.com/Obrais-cloud/shotgen",
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "Siliv",
+      "kind": "tool",
+      "path": "/Volumes/X10 Pro_A/AIPR/Siliv",
+      "description": "App de menu bar macOS en Python/PyQt6 para gestionar VRAM en Apple Silicon.",
+      "utility": "Cuando trabajas con modelos grandes en M-series y necesitas vigilar/ajustar la asignación VRAM unificada desde la barra de menús.",
+      "tags": [
+        "macos",
+        "apple-silicon",
+        "vram",
+        "menu-bar",
+        "python"
+      ],
+      "github": null,
       "version": null,
       "created_at": "2026-05-28"
     },
