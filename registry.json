@@ -48,6 +48,121 @@
       "created_at": "2026-05-27"
     },
     {
+      "name": "chromacut",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/chromacut",
+      "description": "Cinema color analysis y visualization. Extrae la narrativa de color de archivos de video.",
+      "utility": "Cuando necesitas analizar la paleta cromática de un metraje (timeline de color, color script post-rodaje).",
+      "tags": [
+        "video",
+        "color",
+        "filmmaking",
+        "fillos-do-vento"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "clipdex",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/clipdex",
+      "description": "Índice de búsqueda IA de metraje para filmmakers. Indexa la biblioteca de vídeo con modelos vision locales de Ollama y luego busca con lenguaje natural.",
+      "utility": "Cuando tienes horas de metraje y necesitas encontrar 'el plano del caballo blanco al amanecer' sin etiquetarlo a mano.",
+      "tags": [
+        "video",
+        "search",
+        "vision",
+        "filmmaking",
+        "fillos-do-vento"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "cliplog",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/cliplog",
+      "description": "Generador automático de shot log. Detecta cortes de escena con ffmpeg y describe cada plano usando modelos vision de Ollama. 100% local, sin API keys.",
+      "utility": "Cuando vuelves de rodaje con cientos de clips sin loggear y necesitas un shot log básico en minutos.",
+      "tags": [
+        "video",
+        "vision",
+        "filmmaking",
+        "fillos-do-vento"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "clipvault",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/clipvault",
+      "description": "Biblioteca local semántica de clips. Apuntas a una carpeta de vídeos — detecta cambios de escena con ffmpeg, describe cada clip con vision Ollama, y los embebe para búsqueda semántica.",
+      "utility": "Cuando quieres una biblioteca buscable por significado en lugar de por nombre de archivo, todo local.",
+      "tags": [
+        "video",
+        "vision",
+        "rag",
+        "filmmaking",
+        "fillos-do-vento"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "dailies",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/dailies",
+      "description": "Generador automático de informes de dailies para filmmakers. Apuntas a una carpeta de metraje y extrae escenas, paletas de color, captions IA con Ollama vision.",
+      "utility": "Cuando terminas el día de rodaje y necesitas mandar dailies sin pasarte la noche montándolas.",
+      "tags": [
+        "video",
+        "vision",
+        "filmmaking",
+        "fillos-do-vento"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "filmkit",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/filmkit",
+      "description": "Genera press kits profesionales de cine a partir de YAML + Markdown. Un comando, un archivo, una página HTML bonita.",
+      "utility": "Para festivales/distribución: convertir notas en YAML en un press kit publicable. Útil para DOCUFLOW (Fillos do Vento).",
+      "tags": [
+        "filmmaking",
+        "docs",
+        "html",
+        "fillos-do-vento",
+        "docuflow"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "fleetcheck",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/fleetcheck",
+      "description": "Health check de un solo comando para un fleet IA distribuido sobre Tailscale.",
+      "utility": "Por la mañana, ANTES de empezar: 'quién está vivo, qué responde, qué falla'.",
+      "tags": [
+        "fleet",
+        "tailscale",
+        "monitoring",
+        "ops"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
       "name": "forja",
       "kind": "tool",
       "path": "/Users/braisrevalderia/forja",
@@ -60,6 +175,461 @@
       ],
       "github": null,
       "version": "0.1.0",
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "gitollama",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/gitollama",
+      "description": "Git ops potenciado por modelos Ollama locales. Auto-genera commit messages, revisa código, explica commits y genera changelogs — todo local.",
+      "utility": "Cuando quieres ayuda IA en git pero sin meter el repo en cloud (privado, on-prem).",
+      "tags": [
+        "git",
+        "ollama",
+        "dev"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "gollama",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/gollama",
+      "description": "TUI interactiva para gestionar modelos Ollama — list, inspect, delete, copy, push, run, link a LM Studio. (Third-party — uso, no soy el autor.)",
+      "utility": "Cuando necesitas operaciones de gestión de modelos con una TUI cómoda en lugar de comandos `ollama` sueltos.",
+      "tags": [
+        "ollama",
+        "tui",
+        "third-party"
+      ],
+      "github": "https://github.com/sammcj/gollama",
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "hubtrend",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/hubtrend",
+      "description": "Browse trending Hugging Face models, papers, spaces y datasets desde la terminal.",
+      "utility": "Para tu rutina matinal: ver qué subió ayer a HF sin abrir navegador.",
+      "tags": [
+        "huggingface",
+        "terminal",
+        "discovery"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "impulse-buy-freeze",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/impulse-buy-freeze",
+      "description": "PWA mobile-first que pone compras impulsivas en cooldown de 24h, te ayuda a decidir luego y muestra cuánto ahorraste.",
+      "utility": "Cuando quieres cortar las compras impulsivas con fricción (24h) sin bloquear sitios.",
+      "tags": [
+        "pwa",
+        "mobile",
+        "personal",
+        "finance"
+      ],
+      "github": "https://github.com/Obrais-cloud/impulse-buy-freeze",
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "localrag",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/localrag",
+      "description": "RAG local rápido CLI sobre Ollama. Indexa archivos, pregunta, obtén respuestas con fuentes. Sin API keys, sin cloud, sin servidores.",
+      "utility": "Cuando quieres preguntar a un corpus propio (notas, papers, código) y obtener respuestas citables, local.",
+      "tags": [
+        "ollama",
+        "rag",
+        "cli",
+        "local"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "modelbench",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/modelbench",
+      "description": "Benchmark de velocidad/throughput de modelos Ollama. Mide tokens/seg, prompt processing y TTFT en distintos tamaños de contexto.",
+      "utility": "Para elegir qué modelo poner en cada slot del fleet por rendimiento real, no especs.",
+      "tags": [
+        "ollama",
+        "benchmark",
+        "performance"
+      ],
+      "github": "https://github.com/Obrais-cloud/modelbench",
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollabench",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollabench",
+      "description": "Benchmark fleet-wide de inferencia para Ollama. Encuentra qué nodo corre qué modelo más rápido.",
+      "utility": "Cuando duplicas un modelo en varios nodos y necesitas saber a cuál enrutar para esa pareja.",
+      "tags": [
+        "ollama",
+        "benchmark",
+        "fleet",
+        "performance"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollachat",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollachat",
+      "description": "Interfaz web de chat sin dependencias para fleets Ollama. Chatea con cualquier modelo en cualquier nodo desde el navegador. Como Open WebUI pero un solo .py.",
+      "utility": "Cuando quieres dar acceso a alguien a tus modelos por web sin instalar Docker / Open WebUI.",
+      "tags": [
+        "ollama",
+        "chat",
+        "web",
+        "fleet"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollacost",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollacost",
+      "description": "Calculadora de ahorro vs APIs cloud. Cuánto te ahorras corriendo inferencia local vs paying-per-token.",
+      "utility": "Para justificar (en charla, en propuesta) cuánto vale el fleet local frente a OpenAI/Anthropic API.",
+      "tags": [
+        "ollama",
+        "cost",
+        "analytics",
+        "roi"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollactl",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollactl",
+      "description": "Control plane unificado del ecosistema CLI Ollama. Un comando para descubrir, gestionar y correr todos tus `olla*`.",
+      "utility": "Cuando ya tienes 30 herramientas ollaX y necesitas un único launcher / discovery.",
+      "tags": [
+        "ollama",
+        "cli",
+        "meta",
+        "fleet"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "olladash",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/olladash",
+      "description": "Dashboard web en tiempo real para monitorizar y gestionar fleets Ollama. Solo stdlib.",
+      "utility": "Cuando quieres una pestaña en el navegador con el estado del fleet en vez de TUI.",
+      "tags": [
+        "ollama",
+        "fleet",
+        "web",
+        "monitoring"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "olladiff-local",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/olladiff-local",
+      "description": "Comparación side-by-side de outputs de modelos Ollama. Cómo responden distintos modelos al mismo prompt — local o fleet.",
+      "utility": "Cuando dudas entre dos modelos para una tarea concreta — el side-by-side te lo decide.",
+      "tags": [
+        "ollama",
+        "compare",
+        "quality"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollaeval",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollaeval",
+      "description": "Eval automatizada de calidad para modelos Ollama. Test suites YAML, ejecutadas contra modelos, resultados puntuados.",
+      "utility": "Antes de promover un modelo a producción/agente: pasarle suite de eval propia y comparar con baseline.",
+      "tags": [
+        "ollama",
+        "eval",
+        "quality",
+        "yaml"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollafifo",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollafifo",
+      "description": "Proxy HTTP de Ollama que limita concurrencia. Pasa N requests simultáneos (default 1), cola el resto. Por-modelo.",
+      "utility": "Cuando varios clientes pegan a la vez al mismo Ollama y revientan VRAM con 500-OOM.",
+      "tags": [
+        "ollama",
+        "proxy",
+        "fleet",
+        "concurrency"
+      ],
+      "github": "https://github.com/Obrais-cloud/ollafifo",
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollafim",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollafim",
+      "description": "Servidor FIM (Fill-In-the-Middle) para Ollama. Autocompletado tipo Copilot local desde Continue, Cursor Tab, Cody, Tabby, llama.vscode, Zed…",
+      "utility": "Cuando quieres autocompletado IDE local sin Copilot/Codex en la nube.",
+      "tags": [
+        "ollama",
+        "fim",
+        "autocomplete",
+        "editor"
+      ],
+      "github": "https://github.com/Obrais-cloud/ollafim",
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollaflow",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollaflow",
+      "description": "Pipelines composables de modelos para Ollama. Encadena modelos por el fleet con YAML.",
+      "utility": "Para multi-paso (extract → reason → reformat) usando distintos modelos por paso, declarado en YAML.",
+      "tags": [
+        "ollama",
+        "pipeline",
+        "workflow",
+        "yaml"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollahealth",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollahealth",
+      "description": "Diagnóstico de salud del fleet y diff de inventario de modelos. Solo stdlib.",
+      "utility": "Cuando sospechas que un nodo está degradado o que un modelo se borró sin querer.",
+      "tags": [
+        "ollama",
+        "fleet",
+        "monitoring",
+        "health"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollalog",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollalog",
+      "description": "Tracker de uso y ahorro vs cloud. Proxy HTTP transparente que loguea cada request, tokens por modelo y ahorro.",
+      "utility": "Cuando quieres saber cuánto te ahorra correr local vs API cloud (números para justificar el fleet).",
+      "tags": [
+        "ollama",
+        "proxy",
+        "analytics",
+        "cost"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollama-structify",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollama-structify",
+      "description": "Pasa cualquier texto por Ollama y devuelve JSON estructurado.",
+      "utility": "Cuando necesitas convertir texto libre en JSON con un esquema definido, vía LLM local.",
+      "tags": [
+        "ollama",
+        "structured",
+        "json"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollamatop",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollamatop",
+      "description": "Dashboard TUI en tiempo real para Ollama. Como htop, pero para el fleet.",
+      "utility": "En una pestaña fija: ver qué modelos hay vivos, carga y memoria por nodo, mientras trabajas.",
+      "tags": [
+        "ollama",
+        "fleet",
+        "tui",
+        "monitoring"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollamcp",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollamcp",
+      "description": "Bridge de modelos Ollama a servidores MCP de tools. Workflows agentic locales sin cloud.",
+      "utility": "Cuando quieres montar un agente local con tools MCP sin pagar Claude API o Codex.",
+      "tags": [
+        "ollama",
+        "mcp",
+        "agentic",
+        "tools"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollameter",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollameter",
+      "description": "Tracker de uso de tokens a nivel fleet. Reverse proxy transparente que mide cada request — tokens por modelo, por usuario, por nodo — en SQLite.",
+      "utility": "Cuando necesitas métricas multi-tenant del fleet (quién consume qué) más allá de un solo proxy.",
+      "tags": [
+        "ollama",
+        "proxy",
+        "metering",
+        "fleet"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollametrics",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollametrics",
+      "description": "Exportador Prometheus para Ollama. Monitoriza una o varias instancias con observabilidad estándar.",
+      "utility": "Cuando ya tienes Grafana/Prometheus y quieres ver Ollama en los mismos paneles que el resto del stack.",
+      "tags": [
+        "ollama",
+        "prometheus",
+        "observability"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollapark",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollapark",
+      "description": "Gestor de 'parking' de modelos. Defines qué modelos quedan calientes en qué nodos y los precalientas/enfrías con un comando.",
+      "utility": "Antes de una sesión intensiva: calientas el set de modelos que vas a usar para tener TTFT bajo.",
+      "tags": [
+        "ollama",
+        "fleet",
+        "management"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollaprompt",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollaprompt",
+      "description": "Biblioteca y runner de plantillas de prompt para Ollama. Guarda, busca, versiona, ejecuta con sustitución de variables, defaults por modelo, tags y full run history.",
+      "utility": "Cuando tus prompts útiles están dispersos por chats y notas — esto los versiona como código.",
+      "tags": [
+        "ollama",
+        "prompts",
+        "template",
+        "history"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollarena",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollarena",
+      "description": "Arena de comparación en terminal. Calidad lado-a-lado con ratings ELO.",
+      "utility": "Para shootouts más largos: muchos prompts, muchos modelos, ELO que evoluciona.",
+      "tags": [
+        "ollama",
+        "compare",
+        "benchmark",
+        "elo"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollaroute",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollaroute",
+      "description": "Router inteligente de modelos para Ollama. Auto-enruta prompts al mejor modelo local según tipo de tarea por todo el fleet.",
+      "utility": "Cuando quieres una sola URL que reparta solo entre tus modelos locales según el prompt, sin elegir a mano.",
+      "tags": [
+        "ollama",
+        "router",
+        "fleet"
+      ],
+      "github": "https://github.com/Obrais-cloud/ollaroute",
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollasecret",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollasecret",
+      "description": "Proxy transparente de redacción de secretos. Escanea /api/generate y /api/chat por AWS/GitHub/OpenAI/Anthropic keys, JWTs, PEM antes de que crucen la red.",
+      "utility": "Cuando un agente IA podría meter sin querer claves/secretos en un prompt — esto los redacta antes de salir.",
+      "tags": [
+        "ollama",
+        "proxy",
+        "security",
+        "fleet"
+      ],
+      "github": "https://github.com/Obrais-cloud/ollasecret",
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollasync",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollasync",
+      "description": "Sincronización declarativa de modelos. YAML que define qué modelos viven en qué nodos, y `ollasync` los sincroniza.",
+      "utility": "Para mantener consistencia de inventario de modelos entre nodos sin pulls manuales en cada uno.",
+      "tags": [
+        "ollama",
+        "fleet",
+        "sync",
+        "yaml"
+      ],
+      "github": null,
+      "version": null,
       "created_at": "2026-05-28"
     },
     {
@@ -79,6 +649,38 @@
       "created_at": "2026-05-27"
     },
     {
+      "name": "ollaverse",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollaverse",
+      "description": "Página HTML estática del portfolio del ecosistema ollaX — 27+ tools con filtros por categoría, descripciones y arquitectura.",
+      "utility": "Para enseñar el ecosistema (charlas, perfil, links). El catálogo público frente a `forja` (catálogo interno).",
+      "tags": [
+        "portfolio",
+        "html",
+        "catalog",
+        "meta"
+      ],
+      "github": "https://github.com/Obrais-cloud/ollaverse",
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollawake",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollawake",
+      "description": "Coordinador Wake-on-LAN del fleet. Despierta máquinas dormidas (sobre todo Windows) con WoL y espera a que Ollama/SSH respondan antes de devolver control.",
+      "utility": "Justo antes de rutear una petición a un nodo dormido: lo despiertas con confirmación.",
+      "tags": [
+        "ollama",
+        "fleet",
+        "wol",
+        "network"
+      ],
+      "github": "https://github.com/Obrais-cloud/ollawake",
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
       "name": "panoforge",
       "kind": "tool",
       "path": "/Users/braisrevalderia/panoforge",
@@ -95,6 +697,147 @@
       "github": "https://github.com/Obrais-cloud/panoforge",
       "version": "0.8.0",
       "created_at": "2026-05-27"
+    },
+    {
+      "name": "remote-terminal-pwa",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/remote-terminal-pwa",
+      "description": "App web instalable para iPhone que conecta a una shell corriendo en este laptop.",
+      "utility": "Acceso rápido a tu shell desde el móvil cuando estás fuera y sin SSH client nativo.",
+      "tags": [
+        "pwa",
+        "mobile",
+        "terminal",
+        "personal"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "scenesnap",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/scenesnap",
+      "description": "Herramienta de análisis visual para filmmakers. Stills/frames → descripciones de escena, mood, color, notas de cinematografía con Ollama vision.",
+      "utility": "Cuando necesitas notas de análisis cinematográfico sobre planos concretos (referencias, mood board).",
+      "tags": [
+        "video",
+        "vision",
+        "filmmaking"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "scriptbreak",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/scriptbreak",
+      "description": "Breakdown automático de guion con Ollama. Parsea Fountain y extrae elementos de producción por escena: reparto, props, vestuario, vehículos, SFX, VFX.",
+      "utility": "Para pre-producción: convertir un Fountain en un desglose por escena en minutos, sin Excel a mano.",
+      "tags": [
+        "filmmaking",
+        "nlp",
+        "production",
+        "fillos-do-vento"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "shellsense",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/shellsense",
+      "description": "Búsqueda semántica del historial de shell vía embeddings de Ollama. Describes lo que querías, no el comando exacto.",
+      "utility": "Cuando recuerdas QUÉ hiciste (limpiar docker, comprimir vídeo…) pero no el comando exacto.",
+      "tags": [
+        "ollama",
+        "embeddings",
+        "shell",
+        "utility"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "shotcall",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/shotcall",
+      "description": "Genera shot lists cinematográficas a partir de guiones Fountain usando Ollama local.",
+      "utility": "Pre-producción: del Fountain a una shot list inicial que luego refinas en preparación de rodaje.",
+      "tags": [
+        "filmmaking",
+        "production",
+        "fillos-do-vento"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "shotgen",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/shotgen",
+      "description": "Pipeline shot-list → animatic. Transforma shot lists en storyboard frames, animatics animados y clips de vídeo IA.",
+      "utility": "Cuando quieres un animatic rápido para pitch/financiación o para previs sin storyboard artist.",
+      "tags": [
+        "filmmaking",
+        "production",
+        "storyboard",
+        "fillos-do-vento"
+      ],
+      "github": "https://github.com/Obrais-cloud/shotgen",
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "takelog",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/takelog",
+      "description": "Logger de tomas en set. Carga una shot list, registra tomas durante el rodaje, exporta.",
+      "utility": "En el set, durante el rodaje: registrar takes contra la shot list sin papel y exportar limpio para edición.",
+      "tags": [
+        "filmmaking",
+        "production",
+        "fillos-do-vento"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "toolprobe",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/toolprobe",
+      "description": "Benchmark y debugger de tool-calling para Ollama. Comprueba cómo de bien los modelos locales hacen function calling.",
+      "utility": "Antes de meter un modelo en un agente con tools: validar que dispara JSON tool calls correctamente.",
+      "tags": [
+        "ollama",
+        "eval",
+        "tools",
+        "agentic"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "visionlint",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/visionlint",
+      "description": "Revisor de UI por captura, usando modelos vision Ollama. Le pasas un screenshot y devuelve feedback UI/UX accionable.",
+      "utility": "Pre-publicación: pasar capturas de una UI/diseño y obtener crítica de UX automatizada.",
+      "tags": [
+        "ollama",
+        "vision",
+        "ui",
+        "review"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-28"
     }
   ]
 }
