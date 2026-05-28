@@ -1,0 +1,100 @@
+{
+  "items": [
+    {
+      "name": "relogin-hermes.command",
+      "kind": "launcher",
+      "path": "/Users/braisrevalderia/Desktop/Relogin Hermes gpt-5.5.command",
+      "description": "Lanzador de doble-clic en el Escritorio que abre Terminal y ejecuta hermes-codex-relogin.sh; espera tecla al final.",
+      "utility": "Cuando hermes vuelve a caer y prefieres no abrir terminal — doble clic en el Escritorio.",
+      "tags": [
+        "hermes",
+        "desktop",
+        "launcher"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-27"
+    },
+    {
+      "name": "hermes-codex-relogin",
+      "kind": "script",
+      "path": "/Users/braisrevalderia/bin/hermes-codex-relogin.sh",
+      "description": "Script local que automatiza la cadena: reaper de codex app-server → codex login --device-auth en macmini → kickstart del gateway hermes → smoke test gpt-5.5.",
+      "utility": "Cuando hermes falla con refresh_token_reused / context overflow. Se invoca a secas. Cubre el patrón hermes_codex_token_consumed_pattern.",
+      "tags": [
+        "hermes",
+        "codex",
+        "fleet",
+        "ops"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-27"
+    },
+    {
+      "name": "codex-appserver-reaper",
+      "kind": "service",
+      "path": "macmini:/Users/remotework/.openclaw/scripts/codex-appserver-reaper.py",
+      "description": "Reaper cron */15 que mantiene un solo @openclaw/codex app-server vivo en macmini; mata los huérfanos que comparten/queman el refresh token de ChatGPT.",
+      "utility": "Activo en cron de macmini — no se invoca manual. Ver ~/.hermes/logs/codex-reaper.log para auditar reaps.",
+      "tags": [
+        "hermes",
+        "codex",
+        "fleet",
+        "cron"
+      ],
+      "github": null,
+      "version": null,
+      "created_at": "2026-05-27"
+    },
+    {
+      "name": "forja",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/forja",
+      "description": "Catálogo personal de todo lo construido (tool/script/service/launcher/doc/dataset) con descripción y utilidad. registry.json es la fuente de verdad; entries/<slug>.md la ficha por item; README.md el índice auto-generado.",
+      "utility": "Tras crear algo: forja add. Para encontrar: forja list / forja show NAME. Para saltar: cd $(forja path NAME).",
+      "tags": [
+        "catalog",
+        "meta",
+        "personal"
+      ],
+      "github": null,
+      "version": "0.1.0",
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "ollathink",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/ollathink",
+      "description": "Proxy transparente que normaliza modelos thinking de Ollama: inyecta think:false para Qwen3*/DeepSeek-R1/QwQ/gpt-oss/MiniMax-M2/GLM-Z/etc. y elimina <think> de las respuestas (streaming y no-streaming, /api/* y /v1).",
+      "utility": "Cuando un cliente recibe respuestas vacías o ensuciadas con <think>...</think> de modelos híbridos. Apuntas el cliente a http://localhost:11533 y olvidas el problema. Encaja en la cadena → ollathink → ollafifo → ollasecret → ollama.",
+      "tags": [
+        "ollama",
+        "proxy",
+        "thinking",
+        "fleet"
+      ],
+      "github": null,
+      "version": "0.1.0",
+      "created_at": "2026-05-27"
+    },
+    {
+      "name": "panoforge",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/panoforge",
+      "description": "Pipeline local para convertir cualquier still (incluidos los generados por IA) en un panorama 360° listo para VR — validación 2:1, curado de la costura del wrap, cubemap ⇄ equirect, mono→stereo vía DIBR (versión geométrica per-face), viewer WebXR con true per-eye 3D, pipeline de vídeo (seam/synth/rotate/flat) con audio passthrough, packager de instalación multi-escena con hotspots.",
+      "utility": "Cuando tienes una imagen 360 (generada por IA o sacada de cámara) y quieres meterla de verdad en un Quest o en la instalación de Fillos do Vento. También para pósters, anaglifo screen-only o vídeo de avance MP4 para festivales sin headset.",
+      "tags": [
+        "vr",
+        "360",
+        "vfx",
+        "ffmpeg",
+        "python",
+        "fillos-do-vento"
+      ],
+      "github": "https://github.com/Obrais-cloud/panoforge",
+      "version": "0.8.0",
+      "created_at": "2026-05-27"
+    }
+  ]
+}

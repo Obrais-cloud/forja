@@ -1,0 +1,335 @@
+#!/usr/bin/env python3
+"""
+forja — small catalog for "things I've built".
+
+Tracks tools / scripts / services / docs you create, with what each is for
+(`description`) and *when you'd reach for it* (`utility`). Single-file Python
+stdlib. registry.json is the source of truth; entries/<slug>.md is a richer
+per-item page; README.md is the human-readable index.
+
+Commands:
+  add      register a new item (interactive if fields missing)
+  list     show the catalog (filter --kind / --tag)
+  show     show one item in detail
+  edit     open an item's entries/<slug>.md in $EDITOR
+  rm       remove an item
+  path     print the registered path of an item (handy for `cd $(forja path X)`)
+  sync     rewrite README.md from registry.json
+  scan     suggest items by looking at common dirs (no automatic adds)
+"""
+from __future__ import annotations
+
+import argparse
+import datetime
+import json
+import os
+import re
+import shutil
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+REGISTRY = ROOT / "registry.json"
+ENTRIES = ROOT / "entries"
+README = ROOT / "README.md"
+KINDS = ("tool", "script", "service", "launcher", "doc", "dataset")
+DEFAULT_KIND = "tool"
+
+
+# ── data layer ────────────────────────────────────────────────────────────────
+def load() -> dict:
+    if not REGISTRY.exists():
+        return {"items": []}
+    return json.loads(REGISTRY.read_text())
+
+
+def store(reg: dict) -> None:
+    REGISTRY.write_text(json.dumps(reg, indent=2, ensure_ascii=False) + "\n")
+
+
+def slug(name: str) -> str:
+    s = re.sub(r"[^a-zA-Z0-9._-]+", "-", name.strip().lower()).strip("-")
+    return s or "item"
+
+
+def find(reg: dict, name: str) -> dict | None:
+    for it in reg["items"]:
+        if it["name"] == name or slug(it["name"]) == slug(name):
+            return it
+    return None
+
+
+# ── entry markdown ────────────────────────────────────────────────────────────
+def entry_path(name: str) -> Path:
+    return ENTRIES / f"{slug(name)}.md"
+
+
+def write_entry(it: dict) -> None:
+    ENTRIES.mkdir(parents=True, exist_ok=True)
+    p = entry_path(it["name"])
+    # Preserve the "## Notes" section if it already exists, so editing the
+    # registry doesn't blow away free-form notes the user added.
+    notes = ""
+    if p.exists():
+        m = re.search(r"(^## Notes\n.*)\Z", p.read_text(), re.DOTALL | re.MULTILINE)
+        if m:
+            notes = m.group(1)
+    tags = ", ".join(it.get("tags") or []) or "—"
+    gh = it.get("github") or "—"
+    ver = it.get("version") or "—"
+    created = it.get("created_at") or "—"
+    body = f"""# {it["name"]}
+
+| field | value |
+|---|---|
+| kind | `{it["kind"]}` |
+| path | `{it["path"]}` |
+| github | {gh} |
+| version | {ver} |
+| created | {created} |
+| tags | {tags} |
+
+**What it is.** {it.get("description", "—")}
+
+**When to reach for it.** {it.get("utility", "—")}
+"""
+    if not notes:
+        notes = ("## Notes\n\n*(free-form — anything you want to remember; "
+                 "`forja sync` won't overwrite this section.)*\n")
+    p.write_text(body + "\n" + notes)
+
+
+# ── add ───────────────────────────────────────────────────────────────────────
+def prompt(label: str, default: str = "") -> str:
+    if not sys.stdin.isatty():     # non-interactive (CI / scripts) → accept default silently
+        return default
+    suffix = f" [{default}]" if default else ""
+    try:
+        v = input(f"{label}{suffix}: ").strip()
+    except EOFError:
+        v = ""
+    return v or default
+
+
+def cmd_add(a) -> int:
+    reg = load()
+    name = a.name or prompt("name")
+    if not name:
+        print("name required", file=sys.stderr); return 2
+    if find(reg, name) and not a.force:
+        print(f"'{name}' already registered — use --force to overwrite, or `forja edit {name}`",
+              file=sys.stderr)
+        return 1
+    path = a.path or prompt("path", default=str(Path.cwd()))
+    path = os.path.expanduser(path)
+    # remote-style HOST:/abs/path → don't try to resolve locally
+    if not re.match(r"^[a-zA-Z0-9._-]+:/", path):
+        try:
+            path = str(Path(path).resolve())
+        except Exception:
+            pass
+    kind = a.kind or prompt(f"kind ({'|'.join(KINDS)})", default=DEFAULT_KIND)
+    if kind not in KINDS:
+        print(f"kind must be one of {KINDS}", file=sys.stderr); return 2
+    desc = a.desc or prompt("description (what is it?)")
+    utility = a.utility or prompt("utility (when do you reach for it?)")
+    tags = a.tags
+    if tags is None:
+        raw = prompt("tags (comma-separated)", default="")
+        tags = [t.strip() for t in raw.split(",") if t.strip()] if raw else []
+    github = a.github or prompt("github URL (or blank)", default="")
+    version = a.version or prompt("version (or blank)", default="")
+
+    item = {
+        "name": name, "kind": kind, "path": path,
+        "description": desc, "utility": utility,
+        "tags": tags,
+        "github": github or None,
+        "version": version or None,
+        "created_at": a.created_at or datetime.date.today().isoformat(),
+    }
+    reg["items"] = [i for i in reg["items"] if i["name"] != name] + [item]
+    reg["items"].sort(key=lambda x: (x["kind"], x["name"].lower()))
+    store(reg)
+    write_entry(item)
+    sync_readme(reg)
+    print(f"registered: {item['name']} ({item['kind']}) → {entry_path(name)}")
+    return 0
+
+
+# ── list / show / rm / path ───────────────────────────────────────────────────
+def cmd_list(a) -> int:
+    reg = load()
+    items = reg["items"]
+    if a.kind: items = [i for i in items if i["kind"] == a.kind]
+    if a.tag:  items = [i for i in items if a.tag in (i.get("tags") or [])]
+    if not items:
+        print("nothing registered yet — `forja add`"); return 0
+    by_kind: dict[str, list] = {}
+    for it in items: by_kind.setdefault(it["kind"], []).append(it)
+    name_w = max(len(i["name"]) for i in items)
+    for k in sorted(by_kind):
+        print(f"\n[{k}]")
+        for it in sorted(by_kind[k], key=lambda x: x["name"].lower()):
+            tags = " ".join(f"#{t}" for t in (it.get("tags") or []))
+            print(f"  {it['name'].ljust(name_w)}  {it.get('utility', '')[:80]}"
+                  + (f"  {tags}" if tags else ""))
+    return 0
+
+
+def cmd_show(a) -> int:
+    reg = load(); it = find(reg, a.name)
+    if not it:
+        print(f"not found: {a.name}", file=sys.stderr); return 1
+    p = entry_path(it["name"])
+    if p.exists():
+        print(p.read_text())
+    else:
+        print(json.dumps(it, indent=2, ensure_ascii=False))
+    return 0
+
+
+def cmd_rm(a) -> int:
+    reg = load(); it = find(reg, a.name)
+    if not it:
+        print(f"not found: {a.name}", file=sys.stderr); return 1
+    if not a.yes:
+        if prompt(f"remove '{it['name']}'? type yes to confirm").lower() != "yes":
+            print("cancelled"); return 0
+    reg["items"] = [i for i in reg["items"] if i["name"] != it["name"]]
+    store(reg)
+    p = entry_path(it["name"])
+    if p.exists(): p.unlink()
+    sync_readme(reg)
+    print(f"removed: {it['name']}")
+    return 0
+
+
+def cmd_path(a) -> int:
+    reg = load(); it = find(reg, a.name)
+    if not it: return 1
+    print(it["path"]); return 0
+
+
+def cmd_edit(a) -> int:
+    reg = load(); it = find(reg, a.name)
+    if not it:
+        print(f"not found: {a.name}", file=sys.stderr); return 1
+    editor = os.environ.get("EDITOR", "vi")
+    subprocess.run([editor, str(entry_path(it["name"]))])
+    return 0
+
+
+# ── sync README ───────────────────────────────────────────────────────────────
+def sync_readme(reg: dict | None = None) -> None:
+    if reg is None: reg = load()
+    items = reg["items"]
+    lines = [
+        "# forja",
+        "",
+        "*Catálogo personal — todo lo que voy construyendo, con descripción y utilidad.*",
+        "",
+        f"_{len(items)} items registrados. Fuente de verdad: `registry.json`. "
+        "Páginas por item en `entries/`._",
+        "",
+        "## CLI",
+        "```",
+        "forja add                  # registrar (interactivo si faltan campos)",
+        "forja list [--kind X]      # ver el catálogo",
+        "forja show NAME            # ficha completa",
+        "forja edit NAME            # editar la ficha (Notas libres se conservan)",
+        "forja rm   NAME            # quitar",
+        "forja path NAME            # ruta registrada (útil: cd $(forja path X))",
+        "forja sync                 # regenerar este README desde registry.json",
+        "```",
+        "",
+    ]
+    by_kind: dict[str, list] = {}
+    for it in items: by_kind.setdefault(it["kind"], []).append(it)
+    for k in sorted(by_kind):
+        lines += [f"## {k}", "",
+                  "| nombre | utilidad | ruta | github |",
+                  "|---|---|---|---|"]
+        for it in sorted(by_kind[k], key=lambda x: x["name"].lower()):
+            gh = it.get("github") or "—"
+            if gh and gh != "—": gh = f"[link]({gh})"
+            util = (it.get("utility") or "").replace("|", "\\|")
+            lines.append(f"| **[{it['name']}](entries/{slug(it['name'])}.md)** | "
+                         f"{util} | `{it['path']}` | {gh} |")
+        lines.append("")
+    README.write_text("\n".join(lines))
+
+
+def cmd_sync(a) -> int:
+    sync_readme()
+    print(f"wrote {README}")
+    return 0
+
+
+# ── scan suggestions ──────────────────────────────────────────────────────────
+def cmd_scan(a) -> int:
+    """Look at ~/ for dirs that look like projects we haven't registered yet."""
+    reg = load()
+    known = {Path(i["path"]).name.lower() for i in reg["items"]}
+    home = Path.home()
+    candidates = []
+    for p in sorted(home.iterdir()):
+        if not p.is_dir() or p.name.startswith("."): continue
+        if p.name.lower() in known: continue
+        has_git = (p / ".git").exists()
+        has_readme = (p / "README.md").exists() or (p / "readme.md").exists()
+        if has_git or has_readme:
+            candidates.append((p, has_git, has_readme))
+    if not candidates:
+        print("nothing obvious in ~/ that isn't already registered."); return 0
+    print("candidatos sin registrar (git=g, readme=r):")
+    for p, g, r in candidates:
+        flags = ("g" if g else "-") + ("r" if r else "-")
+        print(f"  [{flags}] {p.name}")
+    print("\nregistrarlo: `cd ~/<name> && forja add --path .`")
+    return 0
+
+
+# ── main ──────────────────────────────────────────────────────────────────────
+def build_parser():
+    p = argparse.ArgumentParser(prog="forja", description=__doc__,
+                                formatter_class=argparse.RawDescriptionHelpFormatter)
+    sub = p.add_subparsers(dest="cmd", required=True)
+
+    a = sub.add_parser("add", help="register a new item (interactive if fields missing)")
+    a.add_argument("--name"); a.add_argument("--path")
+    a.add_argument("--kind", choices=KINDS)
+    a.add_argument("--desc"); a.add_argument("--utility")
+    a.add_argument("--tags", type=lambda s: [t.strip() for t in s.split(",") if t.strip()])
+    a.add_argument("--github"); a.add_argument("--version")
+    a.add_argument("--created-at", dest="created_at")
+    a.add_argument("--force", action="store_true")
+    a.set_defaults(func=cmd_add)
+
+    l = sub.add_parser("list", help="show the catalog")
+    l.add_argument("--kind", choices=KINDS); l.add_argument("--tag")
+    l.set_defaults(func=cmd_list)
+
+    s = sub.add_parser("show", help="show one item"); s.add_argument("name")
+    s.set_defaults(func=cmd_show)
+    e = sub.add_parser("edit", help="open an item's entry in $EDITOR"); e.add_argument("name")
+    e.set_defaults(func=cmd_edit)
+    r = sub.add_parser("rm", help="remove an item"); r.add_argument("name")
+    r.add_argument("--yes", action="store_true"); r.set_defaults(func=cmd_rm)
+    pa = sub.add_parser("path", help="print registered path"); pa.add_argument("name")
+    pa.set_defaults(func=cmd_path)
+    sy = sub.add_parser("sync", help="regenerate README.md from registry.json")
+    sy.set_defaults(func=cmd_sync)
+    sc = sub.add_parser("scan", help="suggest unregistered project dirs in ~/")
+    sc.set_defaults(func=cmd_scan)
+    return p
+
+
+def main(argv=None):
+    args = build_parser().parse_args(argv)
+    return args.func(args) or 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
