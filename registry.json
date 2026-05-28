@@ -223,7 +223,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "gitollama",
+          "description": "Git operations powered by local models -- commit messages, code review, changelogs.",
+          "language": "Python",
+          "category": "Development",
+          "icon": "g",
+          "color": "var(--cyan)",
+          "features": [
+            "Generate commit messages from staged diffs",
+            "Code review for bugs, security, style",
+            "Explain commits and generate changelogs"
+          ]
+        }
+      }
     },
     {
       "name": "gollama",
@@ -238,7 +253,22 @@
       ],
       "github": "https://github.com/sammcj/gollama",
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "gollama",
+          "description": "Interactive TUI for managing Ollama models -- list, inspect, delete, copy, push, run, and link to LM Studio.",
+          "language": "Go",
+          "category": "Management",
+          "icon": "G",
+          "color": "var(--green)",
+          "features": [
+            "Interactive TUI with sorting, filtering, and hotkeys",
+            "Edit Modelfiles and calculate vRAM usage",
+            "Link models to LM Studio"
+          ]
+        }
+      }
     },
     {
       "name": "hubtrend",
@@ -253,7 +283,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "hubtrend",
+          "description": "Browse trending Hugging Face models, papers, spaces, and datasets from the terminal.",
+          "language": "Python",
+          "category": "Search",
+          "icon": "H",
+          "color": "var(--blue)",
+          "features": [
+            "Filter by task type or GGUF/Ollama compatibility",
+            "Daily papers with date filtering",
+            "Track new models with --new highlighting"
+          ]
+        }
+      }
     },
     {
       "name": "impulse-buy-freeze",
@@ -316,7 +361,22 @@
       ],
       "github": "https://github.com/Obrais-cloud/modelbench",
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "modelbench",
+          "description": "Speed and throughput benchmarking -- TTFT, tok/s, prompt processing across context sizes.",
+          "language": "Python",
+          "category": "Benchmarking",
+          "icon": "B",
+          "color": "var(--orange)",
+          "features": [
+            "Measures TTFT, gen tok/s, prompt tok/s, wall-clock",
+            "Small, medium, and large context size tests",
+            "Markdown report generation"
+          ]
+        }
+      }
     },
     {
       "name": "olcaps",
@@ -331,7 +391,22 @@
       ],
       "github": "https://github.com/Obrais-cloud/olcaps",
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "olcaps",
+          "description": "Capability scanner -- see what each model supports: vision, tools, thinking, embeddings, code.",
+          "language": "Python",
+          "category": "Management",
+          "icon": "?",
+          "color": "var(--green)",
+          "features": [
+            "Detect capabilities via heuristics and API metadata",
+            "Filter models by capability flags",
+            "JSON output for automation"
+          ]
+        }
+      }
     },
     {
       "name": "olla",
@@ -347,7 +422,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "olla",
+          "description": "Unified launcher, status dashboard, and health checker for the entire ecosystem.",
+          "language": "Python",
+          "category": "Management",
+          "icon": "~",
+          "color": "var(--green)",
+          "features": [
+            "Single CLI entry point tying together all tools",
+            "Status dashboard: Ollama connection, VRAM, models, disk",
+            "Auto-generates shell aliases via olla setup"
+          ]
+        }
+      }
     },
     {
       "name": "ollabench",
@@ -395,7 +485,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "ollaclean",
+          "description": "Model hygiene CLI -- track staleness, check for updates, analyze disk with shared-blob awareness.",
+          "language": "Python",
+          "category": "Management",
+          "icon": "C",
+          "color": "var(--green)",
+          "features": [
+            "Detect stale models and check for upstream updates",
+            "Blob analysis with per-model breakdown and orphan detection",
+            "Safe cleanup with dry-run preview"
+          ]
+        }
+      }
     },
     {
       "name": "ollacode",
@@ -410,7 +515,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "ollacode",
+          "description": "Find the best local model for Claude Code with Anthropic API compatibility testing.",
+          "language": "Python",
+          "category": "Development",
+          "icon": "&lt;&gt;",
+          "color": "var(--cyan)",
+          "features": [
+            "Scan models for Anthropic API compatibility",
+            "Benchmark coding: generation, bug fixing, explanation",
+            "Generate ready-to-use Claude Code config"
+          ]
+        }
+      }
     },
     {
       "name": "ollacost",
@@ -474,7 +594,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "olladiff",
+          "description": "Regression tester -- snapshot eval results and detect quality changes across model updates.",
+          "language": "Python",
+          "category": "Benchmarking",
+          "icon": "D",
+          "color": "var(--orange)",
+          "features": [
+            "10-question eval suite with deterministic settings",
+            "Diff snapshots showing improved/degraded/unchanged",
+            "JSON history for automation"
+          ]
+        }
+      }
     },
     {
       "name": "olladiff-local",
@@ -521,7 +656,22 @@
       ],
       "github": "https://github.com/Obrais-cloud/ollafifo",
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "ollafifo",
+          "description": "Concurrency-limiting HTTP proxy for Ollama -- queue inference per model to prevent OOM 500s under load.",
+          "language": "Python",
+          "category": "Fleet",
+          "icon": "=",
+          "color": "var(--pink)",
+          "features": [
+            "Per-model concurrency override (embeddings can run 8x while big models stay serial)",
+            "Streaming-safe SSE/NDJSON pass-through",
+            "X-Ollafifo-Queued-Ms response header + /_ollafifo/stats endpoint"
+          ]
+        }
+      }
     },
     {
       "name": "ollafim",
@@ -537,7 +687,22 @@
       ],
       "github": "https://github.com/Obrais-cloud/ollafim",
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "ollafim",
+          "description": "Fill-In-the-Middle HTTP server -- local Copilot-style autocomplete for any FIM-aware editor plugin.",
+          "language": "Python",
+          "category": "Development",
+          "icon": "I",
+          "color": "var(--cyan)",
+          "features": [
+            "OpenAI-compatible /v1/completions endpoint with streaming",
+            "Auto-wraps FIM tokens for qwen, deepseek-coder, codestral, codellama, starcoder, codegemma",
+            "Zero deps beyond Python stdlib"
+          ]
+        }
+      }
     },
     {
       "name": "ollafit",
@@ -553,7 +718,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "ollafit",
+          "description": "Context window advisor for Apple Silicon -- calculates safe num_ctx to prevent OOM crashes.",
+          "language": "Python",
+          "category": "Management",
+          "icon": "F",
+          "color": "var(--green)",
+          "features": [
+            "Safe context window limits per model from actual RAM",
+            "Compare quantizations and dual-model concurrency",
+            "Live VRAM monitoring dashboard"
+          ]
+        }
+      }
     },
     {
       "name": "ollafleet",
@@ -569,7 +749,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "ollafleet",
+          "description": "Smart proxy making multiple Ollama instances act as one with intelligent routing.",
+          "language": "Python",
+          "category": "Fleet",
+          "icon": "&gt;&gt;",
+          "color": "var(--pink)",
+          "features": [
+            "Route by model availability and loaded state",
+            "Prefer nodes with models in VRAM (no cold starts)",
+            "X-Ollafleet-Node header for request tracing"
+          ]
+        }
+      }
     },
     {
       "name": "ollaflow",
@@ -633,7 +828,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "ollama-fleet-mcp",
+          "description": "Fleet-aware MCP server for Claude Code with smart routing and model comparison.",
+          "language": "TypeScript",
+          "category": "Fleet",
+          "icon": "{}",
+          "color": "var(--pink)",
+          "features": [
+            "MCP tools for fleet status, generation, comparison",
+            "Smart routing preferring loaded models",
+            "Pull models to specific nodes"
+          ]
+        }
+      }
     },
     {
       "name": "ollama-structify",
@@ -711,7 +921,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "ollametrics",
+          "description": "Prometheus exporter -- exposes OpenMetrics data for Grafana dashboards.",
+          "language": "Python",
+          "category": "Monitoring",
+          "icon": "M",
+          "color": "var(--yellow)",
+          "features": [
+            "Instance health, model counts, VRAM usage metrics",
+            "Multi-host with per-host labels",
+            "Standard Prometheus histogram/counter/gauge types"
+          ]
+        }
+      }
     },
     {
       "name": "ollapark",
@@ -741,7 +966,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "ollapipe",
+          "description": "Pipeline builder -- chain prompts through multiple models sequentially.",
+          "language": "Python",
+          "category": "Pipeline",
+          "icon": "|",
+          "color": "var(--accent)",
+          "features": [
+            "Pipe prompts through models, each gets prior output",
+            "Built-in review, translate, summarize templates",
+            "Custom pipelines via YAML files"
+          ]
+        }
+      }
     },
     {
       "name": "ollaprompt",
@@ -773,7 +1013,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "ollarag",
+          "description": "Dead-simple local RAG -- query your codebase with Ollama, no vector database needed.",
+          "language": "Python",
+          "category": "Search",
+          "icon": "Q",
+          "color": "var(--blue)",
+          "features": [
+            "Index directories with code-aware chunking",
+            "TF-IDF retrieval with source citations",
+            "30+ file types, auto-excludes .git/node_modules"
+          ]
+        }
+      }
     },
     {
       "name": "ollarena",
@@ -789,7 +1044,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "ollarena",
+          "description": "Terminal battle arena -- compare models side-by-side with ELO ratings and blind mode.",
+          "language": "Python",
+          "category": "Benchmarking",
+          "icon": "A",
+          "color": "var(--orange)",
+          "features": [
+            "Head-to-head battles with parallel execution",
+            "ELO ratings and persistent leaderboard",
+            "Blind mode hides names until after voting"
+          ]
+        }
+      }
     },
     {
       "name": "ollaroute",
@@ -804,7 +1074,15 @@
       ],
       "github": "https://github.com/Obrais-cloud/ollaroute",
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "ollaroute",
+          "description": "Smart model router for Ollama — auto-routes prompts to the best local model by task type",
+          "language": "python",
+          "category": "fleet orchestration"
+        }
+      }
     },
     {
       "name": "ollasecret",
@@ -820,7 +1098,22 @@
       ],
       "github": "https://github.com/Obrais-cloud/ollasecret",
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "ollasecret",
+          "description": "Transparent secret-redaction proxy -- scrubs API keys, JWTs, and PEM blocks out of prompts before they hit the wire.",
+          "language": "Python",
+          "category": "Fleet",
+          "icon": "K",
+          "color": "var(--pink)",
+          "features": [
+            "24 built-in regex rules + Shannon-entropy fallback for unknown tokens",
+            "redact / warn / block modes with X-Ollasecret-Action response headers",
+            "SQLite event log + CLI inspector (recent | stats | rules | scan)"
+          ]
+        }
+      }
     },
     {
       "name": "ollasync",
@@ -851,7 +1144,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "ollatag",
+          "description": "Tag models by use-case, then find the best model for any task.",
+          "language": "Python",
+          "category": "Management",
+          "icon": "#",
+          "color": "var(--green)",
+          "features": [
+            "Tag models with custom labels and notes",
+            "Pick best model for a task, ranked by params",
+            "Auto-tag based on model family heuristics"
+          ]
+        }
+      }
     },
     {
       "name": "ollatest",
@@ -867,7 +1175,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "ollatest",
+          "description": "Generate pytest tests for Python files using local models.",
+          "language": "Python",
+          "category": "Development",
+          "icon": "T",
+          "color": "var(--cyan)",
+          "features": [
+            "Auto-picks best coding model for test generation",
+            "Focus on specific functions or edge cases",
+            "Detect untested functions via coverage comparison"
+          ]
+        }
+      }
     },
     {
       "name": "ollathink",
@@ -899,7 +1222,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "ollausage",
+          "description": "Track token usage via transparent proxy and calculate cloud API savings.",
+          "language": "Python",
+          "category": "Monitoring",
+          "icon": "$",
+          "color": "var(--yellow)",
+          "features": [
+            "Transparent proxy logs every token, zero config",
+            "Per-model usage dashboards with daily timeline",
+            "Savings calculator vs GPT-4o, Claude, Gemini"
+          ]
+        }
+      }
     },
     {
       "name": "ollaverse",
@@ -931,7 +1269,22 @@
       ],
       "github": "https://github.com/Obrais-cloud/ollawake",
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "ollawake",
+          "description": "Wake-on-LAN coordinator -- wake sleeping fleet machines before routing inference requests.",
+          "language": "Python",
+          "category": "Fleet",
+          "icon": "~",
+          "color": "var(--pink)",
+          "features": [
+            "Magic-packet WoL with multi-packet repeat for reliability",
+            "Ensure command waits until Ollama responds",
+            "Learn command bootstraps MAC via SSH (powershell/ifconfig/ip link)"
+          ]
+        }
+      }
     },
     {
       "name": "ollawatch",
@@ -947,7 +1300,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "ollawatch",
+          "description": "Real-time terminal dashboard for monitoring multiple Ollama instances simultaneously.",
+          "language": "Python",
+          "category": "Monitoring",
+          "icon": "W",
+          "color": "var(--yellow)",
+          "features": [
+            "Multi-host health, version, latency, and running models",
+            "Auto-refresh with keyboard navigation",
+            "VRAM usage and model expiration timers"
+          ]
+        }
+      }
     },
     {
       "name": "panoforge",
@@ -1012,7 +1380,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "scenesnap",
+          "description": "Visual analysis for filmmakers -- scene descriptions, mood, color, and cinematography from stills.",
+          "language": "Python",
+          "category": "Vision",
+          "icon": "V",
+          "color": "var(--red)",
+          "features": [
+            "Scene description, mood, and color palette extraction",
+            "Frame comparison for visual continuity",
+            "Built for documentary production workflows"
+          ]
+        }
+      }
     },
     {
       "name": "scriptbreak",
@@ -1044,7 +1427,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "shellsense",
+          "description": "Search shell history by meaning using embeddings -- describe what you want, not the exact command.",
+          "language": "Python",
+          "category": "Search",
+          "icon": "S",
+          "color": "var(--blue)",
+          "features": [
+            "Semantic search via nomic-embed-text",
+            "Deduplicate and index history",
+            "Time filtering and clipboard copy"
+          ]
+        }
+      }
     },
     {
       "name": "shotcall",
@@ -1139,7 +1537,22 @@
       ],
       "github": null,
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "ollaverse": {
+          "name": "visionlint",
+          "description": "Screenshot-based UI reviewer -- get actionable UI/UX feedback from vision models.",
+          "language": "Python",
+          "category": "Vision",
+          "icon": "L",
+          "color": "var(--red)",
+          "features": [
+            "Analyze layout, typography, color, components",
+            "Compare screenshots for visual regression",
+            "macOS capture-and-analyze workflow"
+          ]
+        }
+      }
     }
   ]
 }
