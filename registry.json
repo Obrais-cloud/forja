@@ -200,14 +200,14 @@
       "kind": "tool",
       "path": "/Users/braisrevalderia/forja",
       "description": "Catálogo personal de todo lo construido (tool/script/service/launcher/doc/dataset) con descripción y utilidad. registry.json es la fuente de verdad; entries/<slug>.md la ficha por item; README.md el índice auto-generado.",
-      "utility": "Tras crear algo: forja add. Para encontrar: forja list / forja show NAME. Para saltar: cd $(forja path NAME).",
+      "utility": "Tras crear algo: forja add. Para encontrar: forja list / forja show NAME. Para saltar: cd $(forja path NAME). Para ver qué falta publicar: forja missing-gh.",
       "tags": [
         "catalog",
         "meta",
         "personal"
       ],
-      "github": null,
-      "version": "0.1.0",
+      "github": "https://github.com/Obrais-cloud/forja",
+      "version": "0.2.0",
       "created_at": "2026-05-28"
     },
     {

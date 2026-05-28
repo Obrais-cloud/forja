@@ -48,7 +48,7 @@ forja missing-gh           # cola de publicación (items sin github)
 | **[dailies](entries/dailies.md)** | Cuando terminas el día de rodaje y necesitas mandar dailies sin pasarte la noche montándolas. | `/Users/braisrevalderia/dailies` | — |
 | **[filmkit](entries/filmkit.md)** | Para festivales/distribución: convertir notas en YAML en un press kit publicable. Útil para DOCUFLOW (Fillos do Vento). | `/Users/braisrevalderia/filmkit` | — |
 | **[fleetcheck](entries/fleetcheck.md)** | Por la mañana, ANTES de empezar: 'quién está vivo, qué responde, qué falla'. | `/Users/braisrevalderia/fleetcheck` | — |
-| **[forja](entries/forja.md)** | Tras crear algo: forja add. Para encontrar: forja list / forja show NAME. Para saltar: cd $(forja path NAME). | `/Users/braisrevalderia/forja` | — |
+| **[forja](entries/forja.md)** | Tras crear algo: forja add. Para encontrar: forja list / forja show NAME. Para saltar: cd $(forja path NAME). Para ver qué falta publicar: forja missing-gh. | `/Users/braisrevalderia/forja` | [link](https://github.com/Obrais-cloud/forja) |
 | **[gitollama](entries/gitollama.md)** | Cuando quieres ayuda IA en git pero sin meter el repo en cloud (privado, on-prem). | `/Users/braisrevalderia/gitollama` | — |
 | **[gollama](entries/gollama.md)** | Cuando necesitas operaciones de gestión de modelos con una TUI cómoda en lugar de comandos `ollama` sueltos. | `/Users/braisrevalderia/gollama` | [link](https://github.com/sammcj/gollama) |
 | **[hubtrend](entries/hubtrend.md)** | Para tu rutina matinal: ver qué subió ayer a HF sin abrir navegador. | `/Users/braisrevalderia/hubtrend` | — |
