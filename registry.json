@@ -34,17 +34,18 @@
     {
       "name": "agentcrew",
       "kind": "service",
-      "path": "/Volumes/X10 Pro_A/AIPR/agentcrew",
+      "path": "/Users/braisrevalderia/agentcrew",
       "description": "Orquestación de agentes basada en Docker (NATS + SQLite). De momento un docker-compose.yml.",
       "utility": "Cuando arranques la orquestación de agentes para coordinar varios workers vía NATS — está en estado germinal.",
       "tags": [
         "agents",
         "docker",
         "nats",
-        "orchestration"
+        "orchestration",
+        "recreated"
       ],
-      "github": null,
-      "version": null,
+      "github": "https://github.com/Obrais-cloud/agentcrew",
+      "version": "0.1.0",
       "created_at": "2026-05-28"
     },
     {
@@ -66,7 +67,7 @@
     {
       "name": "fillos-mission-control",
       "kind": "service",
-      "path": "/Volumes/X10 Pro_A/AIPR/fillos-mission-control",
+      "path": "/Users/braisrevalderia/fillos-mission-control",
       "description": "Dashboard Next.js 16 de tracking de submissions para proyectos documentales. Vercel KV + Claude AI para generar drafts. Privado en GitHub, desplegado en fillos-mission-control.vercel.app.",
       "utility": "Para gestionar todas las submissions de Fillos do Vento (festivales, grants, prensa, distribución) sin Notion/Airtable.",
       "tags": [
@@ -92,7 +93,49 @@
         "filmmaking",
         "fillos-do-vento"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/chromacut",
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "claudecost",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/claudecost",
+      "description": "Claude Code cost forensics — see where your tokens and money go.",
+      "utility": "(auto-import desde github — escribe la utilidad real con forja edit)",
+      "tags": [
+        "recovered",
+        "claude"
+      ],
+      "github": "https://github.com/Obrais-cloud/claudecost",
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "claudelytics",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/claudelytics",
+      "description": "Visual analytics for your Claude Code usage — \"GitHub Wrapped\" for your terminal.",
+      "utility": "(auto-import desde github — escribe la utilidad real con forja edit)",
+      "tags": [
+        "recovered",
+        "claude"
+      ],
+      "github": "https://github.com/Obrais-cloud/claudelytics",
+      "version": null,
+      "created_at": "2026-05-28"
+    },
+    {
+      "name": "claudesearch",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/claudesearch",
+      "description": "Search and browse your Claude Code conversation history from the terminal.",
+      "utility": "(auto-import desde github — escribe la utilidad real con forja edit)",
+      "tags": [
+        "recovered",
+        "claude"
+      ],
+      "github": "https://github.com/Obrais-cloud/claudesearch",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -109,7 +152,7 @@
         "filmmaking",
         "fillos-do-vento"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/clipdex",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -125,7 +168,7 @@
         "filmmaking",
         "fillos-do-vento"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/cliplog",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -142,7 +185,7 @@
         "filmmaking",
         "fillos-do-vento"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/clipvault",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -158,7 +201,7 @@
         "filmmaking",
         "fillos-do-vento"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/dailies",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -175,7 +218,7 @@
         "fillos-do-vento",
         "docuflow"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/filmkit",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -221,7 +264,7 @@
         "ollama",
         "dev"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/gitollama",
       "version": null,
       "created_at": "2026-05-28",
       "extra": {
@@ -319,7 +362,7 @@
     {
       "name": "localeval",
       "kind": "tool",
-      "path": "/Volumes/X10 Pro_A/AIPR/localeval",
+      "path": "/Users/braisrevalderia/localeval",
       "description": "CLI Python para benchmarking/eval de modelos Ollama locales; suite de 34 preguntas (math/reasoning/coding/general), auto-scoring, output de leaderboard.",
       "utility": "Para evaluar rápido un modelo nuevo en tu suite estándar de 34 preguntas y meterlo en la leaderboard.",
       "tags": [
@@ -328,7 +371,7 @@
         "benchmark",
         "leaderboard"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/localeval",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -344,7 +387,7 @@
         "cli",
         "local"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/localrag",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -381,7 +424,7 @@
     {
       "name": "olcaps",
       "kind": "tool",
-      "path": "/Volumes/X10 Pro_A/AIPR/olcaps",
+      "path": "/Users/braisrevalderia/olcaps",
       "description": "Capability scanner para Ollama — detecta qué soporta cada modelo: vision, tools, thinking, embeddings, code. Usa /api/show + heurísticas; flags --watch (live refresh) y --compare model1 model2 (diff side-by-side).",
       "utility": "Cuando descargas un modelo nuevo y necesitas saber rápido qué capacidades tiene antes de meterlo en un agente o pipeline.",
       "tags": [
@@ -411,17 +454,18 @@
     {
       "name": "olla",
       "kind": "tool",
-      "path": "/Volumes/X10 Pro_A/AIPR/olla",
+      "path": "/Users/braisrevalderia/olla",
       "description": "Launcher unificado, status dashboard y health checker de todo el ecosistema ollaX.",
       "utility": "El punto de entrada cuando ya tienes muchas herramientas ollaX y necesitas un único comando que las descubra y arranque.",
       "tags": [
-        "ollama",
+        "fleet",
         "launcher",
         "meta",
-        "fleet"
+        "ollama",
+        "recreated"
       ],
-      "github": null,
-      "version": null,
+      "github": "https://github.com/Obrais-cloud/olla",
+      "version": "0.1.0",
       "created_at": "2026-05-28",
       "extra": {
         "ollaverse": {
@@ -451,7 +495,7 @@
         "fleet",
         "performance"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollabench",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -467,14 +511,14 @@
         "web",
         "fleet"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollachat",
       "version": null,
       "created_at": "2026-05-28"
     },
     {
       "name": "ollaclean",
       "kind": "tool",
-      "path": "/Volumes/X10 Pro_A/AIPR/ollaclean",
+      "path": "/Users/braisrevalderia/ollaclean",
       "description": "CLI de higiene de modelos Ollama — rastrea staleness, comprueba actualizaciones, analiza disco con conciencia de shared blobs.",
       "utility": "Cuando el disco está lleno y necesitas saber qué modelos puedes borrar sin romper otros que comparten blobs.",
       "tags": [
@@ -483,7 +527,7 @@
         "maintenance",
         "fleet"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollaclean",
       "version": null,
       "created_at": "2026-05-28",
       "extra": {
@@ -505,7 +549,7 @@
     {
       "name": "ollacode",
       "kind": "tool",
-      "path": "/Volumes/X10 Pro_A/AIPR/ollacode",
+      "path": "/Users/braisrevalderia/ollacode",
       "description": "Encuentra el mejor modelo local para Claude Code, con tests de compatibilidad con la API de Anthropic.",
       "utility": "Cuando configuras Claude Code con un backend local y necesitas saber qué modelo encaja mejor en la API de Anthropic.",
       "tags": [
@@ -513,7 +557,7 @@
         "claude-code",
         "compatibility"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollacode",
       "version": null,
       "created_at": "2026-05-28",
       "extra": {
@@ -544,7 +588,7 @@
         "analytics",
         "roi"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollacost",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -560,7 +604,7 @@
         "meta",
         "fleet"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollactl",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -576,24 +620,25 @@
         "web",
         "monitoring"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/olladash",
       "version": null,
       "created_at": "2026-05-28"
     },
     {
       "name": "olladiff",
       "kind": "tool",
-      "path": "/Volumes/X10 Pro_A/AIPR/olladiff",
+      "path": "/Users/braisrevalderia/olladiff",
       "description": "Regression tester — toma snapshots de resultados de eval y detecta cambios de calidad entre versiones de modelos.",
       "utility": "Cuando un modelo recibe update y necesitas saber si la calidad para TUS tests bajó o subió.",
       "tags": [
-        "ollama",
         "eval",
-        "regression",
-        "quality"
+        "ollama",
+        "quality",
+        "recreated",
+        "regression"
       ],
-      "github": null,
-      "version": null,
+      "github": "https://github.com/Obrais-cloud/olladiff",
+      "version": "0.1.0",
       "created_at": "2026-05-28",
       "extra": {
         "ollaverse": {
@@ -622,7 +667,7 @@
         "compare",
         "quality"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/olladiff-local",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -638,7 +683,7 @@
         "quality",
         "yaml"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollaeval",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -707,7 +752,7 @@
     {
       "name": "ollafit",
       "kind": "tool",
-      "path": "/Volumes/X10 Pro_A/AIPR/ollafit",
+      "path": "/Users/braisrevalderia/ollafit",
       "description": "Context window advisor para Apple Silicon — calcula num_ctx seguro para no reventar VRAM.",
       "utility": "ANTES de cargar un modelo grande en M-series: calcula el num_ctx máximo seguro para tu RAM unificada.",
       "tags": [
@@ -716,7 +761,7 @@
         "vram",
         "context"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollafit",
       "version": null,
       "created_at": "2026-05-28",
       "extra": {
@@ -738,17 +783,18 @@
     {
       "name": "ollafleet",
       "kind": "tool",
-      "path": "/Volumes/X10 Pro_A/AIPR/ollafleet",
+      "path": "/Users/braisrevalderia/ollafleet",
       "description": "Proxy inteligente que hace que múltiples instancias de Ollama actúen como una sola con routing inteligente.",
       "utility": "Cuando quieres una única URL para tus clientes que reparta entre nodos del fleet sin que ellos sepan que hay varios.",
       "tags": [
+        "fleet",
         "ollama",
         "proxy",
-        "fleet",
+        "recreated",
         "routing"
       ],
-      "github": null,
-      "version": null,
+      "github": "https://github.com/Obrais-cloud/ollafleet",
+      "version": "0.1.0",
       "created_at": "2026-05-28",
       "extra": {
         "ollaverse": {
@@ -778,7 +824,7 @@
         "workflow",
         "yaml"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollaflow",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -794,7 +840,7 @@
         "monitoring",
         "health"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollahealth",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -810,7 +856,7 @@
         "analytics",
         "cost"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollalog",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -856,7 +902,7 @@
         "structured",
         "json"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollama-structify",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -872,7 +918,7 @@
         "tui",
         "monitoring"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollamatop",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -888,7 +934,7 @@
         "agentic",
         "tools"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollamcp",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -904,7 +950,7 @@
         "metering",
         "fleet"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollameter",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -919,7 +965,7 @@
         "prometheus",
         "observability"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollametrics",
       "version": null,
       "created_at": "2026-05-28",
       "extra": {
@@ -949,23 +995,24 @@
         "fleet",
         "management"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollapark",
       "version": null,
       "created_at": "2026-05-28"
     },
     {
       "name": "ollapipe",
       "kind": "tool",
-      "path": "/Volumes/X10 Pro_A/AIPR/ollapipe",
+      "path": "/Users/braisrevalderia/ollapipe",
       "description": "Pipeline builder — encadena prompts a través de varios modelos secuencialmente.",
       "utility": "Cuando una tarea necesita varias pasadas con modelos distintos (extraer → razonar → reformatear) en un solo comando.",
       "tags": [
         "ollama",
         "pipeline",
+        "recreated",
         "workflow"
       ],
-      "github": null,
-      "version": null,
+      "github": "https://github.com/Obrais-cloud/ollapipe",
+      "version": "0.1.0",
       "created_at": "2026-05-28",
       "extra": {
         "ollaverse": {
@@ -995,24 +1042,25 @@
         "template",
         "history"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollaprompt",
       "version": null,
       "created_at": "2026-05-28"
     },
     {
       "name": "ollarag",
       "kind": "tool",
-      "path": "/Volumes/X10 Pro_A/AIPR/ollarag",
+      "path": "/Users/braisrevalderia/ollarag",
       "description": "RAG local 'dead-simple' — consulta tu codebase con Ollama, sin vector DB.",
       "utility": "Cuando quieres hacer Q&A sobre un repo o un corpus de notas sin levantar Qdrant/Chroma/etc.",
       "tags": [
+        "codebase",
+        "local",
         "ollama",
         "rag",
-        "codebase",
-        "local"
+        "recreated"
       ],
-      "github": null,
-      "version": null,
+      "github": "https://github.com/Obrais-cloud/ollarag",
+      "version": "0.1.0",
       "created_at": "2026-05-28",
       "extra": {
         "ollaverse": {
@@ -1042,7 +1090,7 @@
         "benchmark",
         "elo"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollarena",
       "version": null,
       "created_at": "2026-05-28",
       "extra": {
@@ -1127,23 +1175,24 @@
         "sync",
         "yaml"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollasync",
       "version": null,
       "created_at": "2026-05-28"
     },
     {
       "name": "ollatag",
       "kind": "tool",
-      "path": "/Volumes/X10 Pro_A/AIPR/ollatag",
+      "path": "/Users/braisrevalderia/ollatag",
       "description": "Etiqueta modelos por caso de uso y luego encuentra el mejor modelo para cualquier tarea.",
       "utility": "Cuando tienes 30 modelos descargados y quieres elegir rápido por tarea ('para razonar', 'para resumir', 'para código').",
       "tags": [
+        "discovery",
         "ollama",
-        "tagging",
-        "discovery"
+        "recreated",
+        "tagging"
       ],
-      "github": null,
-      "version": null,
+      "github": "https://github.com/Obrais-cloud/ollatag",
+      "version": "0.1.0",
       "created_at": "2026-05-28",
       "extra": {
         "ollaverse": {
@@ -1164,17 +1213,18 @@
     {
       "name": "ollatest",
       "kind": "tool",
-      "path": "/Volumes/X10 Pro_A/AIPR/ollatest",
+      "path": "/Users/braisrevalderia/ollatest",
       "description": "Genera pytest tests para ficheros Python usando modelos locales.",
       "utility": "Cuando empiezas un módulo Python sin tests y quieres una primera batería razonable generada localmente.",
       "tags": [
+        "dev",
         "ollama",
         "python",
-        "testing",
-        "dev"
+        "recreated",
+        "testing"
       ],
-      "github": null,
-      "version": null,
+      "github": "https://github.com/Obrais-cloud/ollatest",
+      "version": "0.1.0",
       "created_at": "2026-05-28",
       "extra": {
         "ollaverse": {
@@ -1204,24 +1254,25 @@
         "thinking",
         "fleet"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollathink",
       "version": "0.1.0",
       "created_at": "2026-05-27"
     },
     {
       "name": "ollausage",
       "kind": "tool",
-      "path": "/Volumes/X10 Pro_A/AIPR/ollausage",
+      "path": "/Users/braisrevalderia/ollausage",
       "description": "Track de uso de tokens vía proxy transparente; calcula ahorro vs API cloud.",
       "utility": "Cuando necesitas un número 'cuántos tokens consumí, cuánto me habría costado en cloud' para justificar el fleet.",
       "tags": [
+        "analytics",
+        "cost",
         "ollama",
         "proxy",
-        "analytics",
-        "cost"
+        "recreated"
       ],
-      "github": null,
-      "version": null,
+      "github": "https://github.com/Obrais-cloud/ollausage",
+      "version": "0.1.0",
       "created_at": "2026-05-28",
       "extra": {
         "ollaverse": {
@@ -1289,17 +1340,18 @@
     {
       "name": "ollawatch",
       "kind": "tool",
-      "path": "/Volumes/X10 Pro_A/AIPR/ollawatch",
+      "path": "/Users/braisrevalderia/ollawatch",
       "description": "Dashboard de terminal en tiempo real para monitorizar varias instancias de Ollama simultáneamente.",
       "utility": "Cuando trabajas con varios nodos del fleet y quieres ver carga/modelos en vivo en una pestaña.",
       "tags": [
-        "ollama",
         "fleet",
         "monitoring",
+        "ollama",
+        "recreated",
         "tui"
       ],
-      "github": null,
-      "version": null,
+      "github": "https://github.com/Obrais-cloud/ollawatch",
+      "version": "0.1.0",
       "created_at": "2026-05-28",
       "extra": {
         "ollaverse": {
@@ -1338,7 +1390,7 @@
     {
       "name": "promptcmp",
       "kind": "tool",
-      "path": "/Volumes/X10 Pro_A/AIPR/promptcmp",
+      "path": "/Users/braisrevalderia/promptcmp",
       "description": "CLI Python para comparar respuestas de varios modelos Ollama locales lado-a-lado; streaming en paralelo, strip de <think>, fallback secuencial para modelos grandes, export markdown.",
       "utility": "Cuando dudas entre 3-4 modelos para una tarea concreta: mismo prompt, comparación visual + markdown para luego decidir.",
       "tags": [
@@ -1347,9 +1399,27 @@
         "quality",
         "markdown"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/promptcmp",
       "version": null,
       "created_at": "2026-05-28"
+    },
+    {
+      "name": "pushdoctor",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/pushdoctor",
+      "description": "Diagnose why a git push to GitHub will or won't work — credential helper, gh token validity, SSH key, and write-permission (viewerPermission) checks, with a verdict and copy-paste fixes.",
+      "utility": "When a git push to GitHub fails or you want a preflight: tells you if it's the credential helper, an expired gh token, an unregistered SSH key, the wrong protocol, or that your account lacks write access. Single-file Python 3, stdlib only.",
+      "tags": [
+        "git",
+        "github",
+        "cli",
+        "python",
+        "devtools",
+        "auth"
+      ],
+      "github": "https://github.com/Obrais-cloud/pushdoctor",
+      "version": null,
+      "created_at": "2026-06-29"
     },
     {
       "name": "remote-terminal-pwa",
@@ -1409,7 +1479,7 @@
         "production",
         "fillos-do-vento"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/scriptbreak",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -1425,7 +1495,7 @@
         "shell",
         "utility"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/shellsense",
       "version": null,
       "created_at": "2026-05-28",
       "extra": {
@@ -1455,7 +1525,7 @@
         "production",
         "fillos-do-vento"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/shotcall",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -1503,7 +1573,7 @@
         "production",
         "fillos-do-vento"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/takelog",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -1519,7 +1589,7 @@
         "tools",
         "agentic"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/toolprobe",
       "version": null,
       "created_at": "2026-05-28"
     },
@@ -1535,7 +1605,7 @@
         "ui",
         "review"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/visionlint",
       "version": null,
       "created_at": "2026-05-28",
       "extra": {
