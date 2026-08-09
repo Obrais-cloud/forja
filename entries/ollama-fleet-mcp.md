@@ -3,8 +3,8 @@
 | field | value |
 |---|---|
 | kind | `tool` |
-| path | `/Volumes/X10 Pro_A/AIPR/ollama-fleet-mcp` |
-| github | — |
+| path | `/Users/braisrevalderia/ollama-fleet-mcp` |
+| github | https://github.com/Obrais-cloud/ollama-fleet-mcp |
 | version | — |
 | created | 2026-05-28 |
 | tags | ollama, mcp, claude-code, fleet |

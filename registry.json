@@ -863,8 +863,8 @@
     {
       "name": "ollama-fleet-mcp",
       "kind": "tool",
-      "path": "/Volumes/X10 Pro_A/AIPR/ollama-fleet-mcp",
-      "description": "MCP server fleet-aware para Claude Code con routing inteligente y comparación de modelos.",
+      "path": "/Users/braisrevalderia/ollama-fleet-mcp",
+      "description": "MCP server fleet-aware para Claude Code con routing inteligente y comparación de modelos. [Reescrito 2026-08-08 tras la pérdida del SSD X10 Pro_A — no es el código original.]",
       "utility": "Cuando usas Claude Code y quieres exponer el fleet local como tools MCP (routing + bench desde dentro del agente).",
       "tags": [
         "ollama",
@@ -872,7 +872,7 @@
         "claude-code",
         "fleet"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/ollama-fleet-mcp",
       "version": null,
       "created_at": "2026-05-28",
       "extra": {
@@ -1548,8 +1548,8 @@
     {
       "name": "Siliv",
       "kind": "tool",
-      "path": "/Volumes/X10 Pro_A/AIPR/Siliv",
-      "description": "App de menu bar macOS en Python/PyQt6 para gestionar VRAM en Apple Silicon.",
+      "path": "/Users/braisrevalderia/Siliv",
+      "description": "App de menu bar macOS en Python/PyQt6 para gestionar VRAM en Apple Silicon. [Reescrito 2026-08-08 tras la pérdida del SSD X10 Pro_A — no es el código original.]",
       "utility": "Cuando trabajas con modelos grandes en M-series y necesitas vigilar/ajustar la asignación VRAM unificada desde la barra de menús.",
       "tags": [
         "macos",
@@ -1558,7 +1558,7 @@
         "menu-bar",
         "python"
       ],
-      "github": null,
+      "github": "https://github.com/Obrais-cloud/Siliv",
       "version": null,
       "created_at": "2026-05-28"
     },

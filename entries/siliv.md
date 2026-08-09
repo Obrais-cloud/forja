@@ -3,8 +3,8 @@
 | field | value |
 |---|---|
 | kind | `tool` |
-| path | `/Volumes/X10 Pro_A/AIPR/Siliv` |
-| github | — |
+| path | `/Users/braisrevalderia/Siliv` |
+| github | https://github.com/Obrais-cloud/Siliv |
 | version | — |
 | created | 2026-05-28 |
 | tags | macos, apple-silicon, vram, menu-bar, python |
