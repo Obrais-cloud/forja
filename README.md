@@ -2,7 +2,7 @@
 
 *Catálogo personal — todo lo que voy construyendo, con descripción y utilidad.*
 
-_76 items registrados. Fuente de verdad: `registry.json`. Páginas por item en `entries/`._
+_77 items registrados. Fuente de verdad: `registry.json`. Páginas por item en `entries/`._
 
 ## CLI
 ```
@@ -36,6 +36,7 @@ forja missing-gh           # cola de publicación (items sin github)
 | **[agentcrew](entries/agentcrew.md)** | Cuando arranques la orquestación de agentes para coordinar varios workers vía NATS — está en estado germinal. | `/Users/braisrevalderia/agentcrew` | [link](https://github.com/Obrais-cloud/agentcrew) |
 | **[codex-appserver-reaper](entries/codex-appserver-reaper.md)** | Activo en cron de macmini — no se invoca manual. Ver ~/.hermes/logs/codex-reaper.log para auditar reaps. | `macmini:/Users/remotework/.openclaw/scripts/codex-appserver-reaper.py` | — |
 | **[fillos-mission-control](entries/fillos-mission-control.md)** | Para gestionar todas las submissions de Fillos do Vento (festivales, grants, prensa, distribución) sin Notion/Airtable. | `/Users/braisrevalderia/fillos-mission-control` | [link](https://github.com/Obrais-cloud/fillos-mission-control) |
+| **[ollapix](entries/ollapix.md)** | Generar imagenes hiperrealistas (Pony V6 XL) bajo demanda desde agentes o remoto, serializado en la RTX 4090 | `/Users/braisrevalderia/ollapix` | [link](https://github.com/Obrais-cloud/ollapix) |
 
 ## tool
 
