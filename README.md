@@ -9,6 +9,7 @@ _77 items registrados. Fuente de verdad: `registry.json`. Páginas por item en `
 forja add                  # registrar (interactivo si faltan campos)
 forja list [--kind X]      # ver el catálogo
 forja show NAME            # ficha completa
+forja status [NAME]        # evidencia operativa local con fecha; --json para agentes
 forja edit NAME            # editar la ficha (Notas libres se conservan)
 forja rm   NAME            # quitar
 forja path NAME            # ruta registrada (útil: cd $(forja path X))

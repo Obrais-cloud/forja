@@ -11,6 +11,7 @@ Commands:
   add      register a new item (interactive if fields missing)
   list     show the catalog (filter --kind / --tag)
   show     show one item in detail
+  status   dated operational evidence kept outside the public catalog
   edit     open an item's entries/<slug>.md in $EDITOR
   rm       remove an item
   path     print the registered path of an item (handy for `cd $(forja path X)`)
@@ -200,6 +201,84 @@ def cmd_show(a) -> int:
     return 0
 
 
+def operations_path() -> Path:
+    """Private observations must never become registry or export metadata."""
+    override = os.environ.get("FORJA_OPERATIONS_FILE")
+    return Path(override).expanduser() if override else Path.home() / ".local/state/forja/operations.json"
+
+
+def observation_date(value: str) -> datetime.datetime:
+    if not isinstance(value, str):
+        raise ValueError("invalid observation date")
+    parsed = datetime.datetime.fromisoformat(value.replace("Z", "+00:00"))
+    if parsed.tzinfo is None:
+        raise ValueError("observation dates require a timezone")
+    return parsed
+
+
+def load_operations(reg: dict, path: Path, now: datetime.datetime) -> list[dict]:
+    if not path.exists():
+        return []
+    data = json.loads(path.read_text())
+    if not isinstance(data, dict) or set(data) != {"schema_version", "observations"}:
+        raise ValueError("invalid operations document")
+    if type(data["schema_version"]) is not int or data["schema_version"] != 1 or not isinstance(data["observations"], list):
+        raise ValueError("unsupported operations schema")
+    known = {it["name"] for it in reg["items"]}
+    required = {"item", "observed_at", "expires_at", "state", "summary", "evidence", "next_action"}
+    optional = {"runtime", "source", "consumer"}
+    seen, output = set(), []
+    for row in data["observations"]:
+        if not isinstance(row, dict) or not required <= set(row) or set(row) - required - optional:
+            raise ValueError("invalid observation fields")
+        if any(not isinstance(row[k], str) or not row[k].strip() for k in set(row) - {"evidence"}):
+            raise ValueError("empty or invalid observation text")
+        if row["item"] not in known or row["item"] in seen:
+            raise ValueError("unknown or duplicate catalog item")
+        seen.add(row["item"])
+        if row["state"] not in {"verified", "partial", "blocked", "unverified"}:
+            raise ValueError("unknown evidence state")
+        if not isinstance(row["evidence"], list) or not row["evidence"] or any(not isinstance(v, str) or not v.strip() for v in row["evidence"]):
+            raise ValueError("evidence references required")
+        observed, expires = observation_date(row["observed_at"]), observation_date(row["expires_at"])
+        if expires <= observed or observed > now + datetime.timedelta(minutes=5):
+            raise ValueError("inconsistent observation dates")
+        output.append(dict(row, needs_review=now >= expires))
+    return output
+
+
+def cmd_status(a) -> int:
+    reg = load()
+    item = find(reg, a.name) if a.name else None
+    if a.name and not item:
+        print(f"not found: {a.name}", file=sys.stderr)
+        return 1
+    now = datetime.datetime.now(datetime.timezone.utc)
+    try:
+        rows = load_operations(reg, operations_path(), now)
+    except (OSError, ValueError, TypeError):
+        print("No se pudo validar la evidencia operativa local; no se considera verificada.", file=sys.stderr)
+        return 2
+    if item:
+        rows = [row for row in rows if row["item"] == item["name"]]
+    if a.json:
+        print(json.dumps({"schema_version": 1, "as_of": now.isoformat(), "observations": rows}, ensure_ascii=False, indent=2))
+        return 0
+    if not rows:
+        print("Sin evidencia operativa registrada. Esto no acredita que el proyecto esté disponible o caído.")
+    for row in rows:
+        state = "requiere revisión" if row["needs_review"] else row["state"]
+        print(f"\n{row['item']} — {state} (observado {row['observed_at']})")
+        print(row["summary"])
+        for key in ("runtime", "source", "consumer"):
+            if key in row:
+                print(f"  {key}: {row[key]}")
+        print(f"  Siguiente: {row['next_action']}")
+        print("  Evidencia: " + "; ".join(row["evidence"]))
+        print(f"  Revisar antes de: {row['expires_at']}")
+    return 0
+
+
 def cmd_rm(a) -> int:
     reg = load(); it = find(reg, a.name)
     if not it:
@@ -248,6 +327,7 @@ def sync_readme(reg: dict | None = None) -> None:
         "forja add                  # registrar (interactivo si faltan campos)",
         "forja list [--kind X]      # ver el catálogo",
         "forja show NAME            # ficha completa",
+        "forja status [NAME]        # evidencia operativa local con fecha; --json para agentes",
         "forja edit NAME            # editar la ficha (Notas libres se conservan)",
         "forja rm   NAME            # quitar",
         "forja path NAME            # ruta registrada (útil: cd $(forja path X))",
@@ -351,11 +431,11 @@ def _memory_block(reg: dict) -> str:
         f"Repo: https://github.com/Obrais-cloud/forja",
         "",
         f"- **{n} items** ({by_kind_s})",
-        f"- **{with_gh} publicados en github** · {n - with_gh} en cola (`forja missing-gh`)",
+        f"- **{with_gh} con enlace GitHub** · {n - with_gh} sin enlace (`forja missing-gh`)",
         f"- **fillos-do-vento ({len(fdv)})**: {', '.join(fdv) if fdv else '—'}",
         f"- **últimos añadidos**: {recent_s}",
         "",
-        "Comandos: `forja list` · `forja show NAME` · `forja missing-gh` · `cd $(forja path NAME)`",
+        "Comandos: `forja list` · `forja show NAME` · `forja status NAME` (evidencia local fechada) · `forja missing-gh` · `cd $(forja path NAME)`",
         MEM_END,
     ]
     return "\n".join(lines)
@@ -624,6 +704,10 @@ def build_parser():
 
     s = sub.add_parser("show", help="show one item"); s.add_argument("name")
     s.set_defaults(func=cmd_show)
+    st = sub.add_parser("status", help="read dated private operational evidence; no network or catalog changes")
+    st.add_argument("name", nargs="?")
+    st.add_argument("--json", action="store_true")
+    st.set_defaults(func=cmd_status)
     e = sub.add_parser("edit", help="open an item's entry in $EDITOR"); e.add_argument("name")
     e.set_defaults(func=cmd_edit)
     r = sub.add_parser("rm", help="remove an item"); r.add_argument("name")
