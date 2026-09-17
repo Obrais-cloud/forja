@@ -2,7 +2,7 @@
 
 *Catálogo personal — todo lo que voy construyendo, con descripción y utilidad.*
 
-_80 items registrados. Fuente de verdad: `registry.json`. Páginas por item en `entries/`._
+_81 items registrados. Fuente de verdad: `registry.json`. Páginas por item en `entries/`._
 
 ## CLI
 ```
@@ -116,4 +116,5 @@ forja missing-gh           # cola de publicación (items sin github)
 | **[sutton-dashboard](entries/sutton-dashboard.md)** | Reutilizar vistas de campañas y calendario al integrar fuentes verificadas; consultar forja status antes de operar. | `/Users/braisrevalderia/Documents/Codex/2026-09-04/qui/work/sutton-dashboard-review` | [link](https://github.com/Obrais-cloud/sutton-dashboard) |
 | **[takelog](entries/takelog.md)** | En el set, durante el rodaje: registrar takes contra la shot list sin papel y exportar limpio para edición. | `/Users/braisrevalderia/takelog` | [link](https://github.com/Obrais-cloud/takelog) |
 | **[toolprobe](entries/toolprobe.md)** | Antes de meter un modelo en un agente con tools: validar que dispara JSON tool calls correctamente. | `/Users/braisrevalderia/toolprobe` | [link](https://github.com/Obrais-cloud/toolprobe) |
+| **[typesafe-translate](entries/typesafe-translate.md)** | Cuando quieras usar TypeSafe sin escribir el JSON a mano: describes el juicio en español y te da (o ejecuta) el request. Comando typesafe-translate | `/Users/braisrevalderia/typesafe-translate` | [link](https://github.com/Obrais-cloud/typesafe-translate) |
 | **[visionlint](entries/visionlint.md)** | Pre-publicación: pasar capturas de una UI/diseño y obtener crítica de UX automatizada. | `/Users/braisrevalderia/visionlint` | [link](https://github.com/Obrais-cloud/visionlint) |

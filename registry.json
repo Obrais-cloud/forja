@@ -1686,6 +1686,25 @@
       "created_at": "2026-05-28"
     },
     {
+      "name": "typesafe-translate",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/typesafe-translate",
+      "description": "CLI que compila lenguaje natural a variables de TypeSafe (state + questions con noul/choice/score) usando un LLM local de la flota, y las ejecuta",
+      "utility": "Cuando quieras usar TypeSafe sin escribir el JSON a mano: describes el juicio en español y te da (o ejecuta) el request. Comando typesafe-translate",
+      "tags": [
+        "typesafe",
+        "jev",
+        "llm",
+        "ollama",
+        "fleet",
+        "cli",
+        "compiler"
+      ],
+      "github": "https://github.com/Obrais-cloud/typesafe-translate",
+      "version": "0.1.0",
+      "created_at": "2026-09-17"
+    },
+    {
       "name": "visionlint",
       "kind": "tool",
       "path": "/Users/braisrevalderia/visionlint",
