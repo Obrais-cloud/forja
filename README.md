@@ -2,13 +2,14 @@
 
 *Catálogo personal — todo lo que voy construyendo, con descripción y utilidad.*
 
-_77 items registrados. Fuente de verdad: `registry.json`. Páginas por item en `entries/`._
+_80 items registrados. Fuente de verdad: `registry.json`. Páginas por item en `entries/`._
 
 ## CLI
 ```
 forja add                  # registrar (interactivo si faltan campos)
 forja list [--kind X]      # ver el catálogo
 forja show NAME            # ficha completa
+forja status [NAME]        # evidencia operativa local con fecha; --json para agentes
 forja edit NAME            # editar la ficha (Notas libres se conservan)
 forja rm   NAME            # quitar
 forja path NAME            # ruta registrada (útil: cd $(forja path X))
@@ -35,8 +36,9 @@ forja missing-gh           # cola de publicación (items sin github)
 |---|---|---|---|
 | **[agentcrew](entries/agentcrew.md)** | Cuando arranques la orquestación de agentes para coordinar varios workers vía NATS — está en estado germinal. | `/Users/braisrevalderia/agentcrew` | [link](https://github.com/Obrais-cloud/agentcrew) |
 | **[codex-appserver-reaper](entries/codex-appserver-reaper.md)** | Activo en cron de macmini — no se invoca manual. Ver ~/.hermes/logs/codex-reaper.log para auditar reaps. | `macmini:/Users/remotework/.openclaw/scripts/codex-appserver-reaper.py` | — |
-| **[fillos-mission-control](entries/fillos-mission-control.md)** | Para gestionar todas las submissions de Fillos do Vento (festivales, grants, prensa, distribución) sin Notion/Airtable. | `/Users/braisrevalderia/fillos-mission-control` | [link](https://github.com/Obrais-cloud/fillos-mission-control) |
+| **[fillos-mission-control](entries/fillos-mission-control.md)** | Gestionar proyectos de Cinexin, convocatorias, versiones documentales y borradores en https://docs-mission-control.vercel.app. La ruta local histórica no existe en la comprobación del 2026-09-05. | `/Users/braisrevalderia/fillos-mission-control` | [link](https://github.com/Obrais-cloud/docs-mission-control) |
 | **[ollapix](entries/ollapix.md)** | Generar imagenes hiperrealistas (Pony V6 XL) bajo demanda desde agentes o remoto, serializado en la RTX 4090 | `/Users/braisrevalderia/ollapix` | [link](https://github.com/Obrais-cloud/ollapix) |
+| **[ticket-rerank](entries/ticket-rerank.md)** | Cuando necesites priorizar/triage un lote de tickets de soporte por urgencia con un juicio semantico calibrado; expone POST /rerank | `/Users/braisrevalderia/ticket-rerank` | [link](https://github.com/Obrais-cloud/ticket-rerank) |
 
 ## tool
 
@@ -49,6 +51,7 @@ forja missing-gh           # cola de publicación (items sin github)
 | **[clipdex](entries/clipdex.md)** | Cuando tienes horas de metraje y necesitas encontrar 'el plano del caballo blanco al amanecer' sin etiquetarlo a mano. | `/Users/braisrevalderia/clipdex` | [link](https://github.com/Obrais-cloud/clipdex) |
 | **[cliplog](entries/cliplog.md)** | Cuando vuelves de rodaje con cientos de clips sin loggear y necesitas un shot log básico en minutos. | `/Users/braisrevalderia/cliplog` | [link](https://github.com/Obrais-cloud/cliplog) |
 | **[clipvault](entries/clipvault.md)** | Cuando quieres una biblioteca buscable por significado en lugar de por nombre de archivo, todo local. | `/Users/braisrevalderia/clipvault` | [link](https://github.com/Obrais-cloud/clipvault) |
+| **[cofounder-os](entries/cofounder-os.md)** | Evaluar vistas y componentes de operaciones del portfolio; consultar status antes de conectar automatizaciones o reutilizar funciones. | `/Users/braisrevalderia/Documents/Codex/2026-09-04/qui/work/cofounder-os-review` | [link](https://github.com/Obrais-cloud/cofounder-os) |
 | **[dailies](entries/dailies.md)** | Cuando terminas el día de rodaje y necesitas mandar dailies sin pasarte la noche montándolas. | `/Users/braisrevalderia/dailies` | [link](https://github.com/Obrais-cloud/dailies) |
 | **[filmkit](entries/filmkit.md)** | Para festivales/distribución: convertir notas en YAML en un press kit publicable. Útil para DOCUFLOW (Fillos do Vento). | `/Users/braisrevalderia/filmkit` | [link](https://github.com/Obrais-cloud/filmkit) |
 | **[fleetcheck](entries/fleetcheck.md)** | Por la mañana, ANTES de empezar: 'quién está vivo, qué responde, qué falla'. | `/Users/braisrevalderia/fleetcheck` | — |
@@ -79,7 +82,7 @@ forja missing-gh           # cola de publicación (items sin github)
 | **[ollaflow](entries/ollaflow.md)** | Para multi-paso (extract → reason → reformat) usando distintos modelos por paso, declarado en YAML. | `/Users/braisrevalderia/ollaflow` | [link](https://github.com/Obrais-cloud/ollaflow) |
 | **[ollahealth](entries/ollahealth.md)** | Cuando sospechas que un nodo está degradado o que un modelo se borró sin querer. | `/Users/braisrevalderia/ollahealth` | [link](https://github.com/Obrais-cloud/ollahealth) |
 | **[ollalog](entries/ollalog.md)** | Cuando quieres saber cuánto te ahorra correr local vs API cloud (números para justificar el fleet). | `/Users/braisrevalderia/ollalog` | [link](https://github.com/Obrais-cloud/ollalog) |
-| **[ollama-fleet-mcp](entries/ollama-fleet-mcp.md)** | Cuando usas Claude Code y quieres exponer el fleet local como tools MCP (routing + bench desde dentro del agente). | `/Users/braisrevalderia/ollama-fleet-mcp` | [link](https://github.com/Obrais-cloud/ollama-fleet-mcp) |
+| **[ollama-fleet-mcp](entries/ollama-fleet-mcp.md)** | Desde Claude Code, consultar salud y modelos de Mac Studio, Corsair y Alien18; generar o comparar con un encargo concreto. Inicialización MCP, seis herramientas y fleet_health verificados el 2026-09-05; inferencia no probada en esa consulta. | `/Users/braisrevalderia/ollama-fleet-mcp` | [link](https://github.com/Obrais-cloud/ollama-fleet-mcp) |
 | **[ollama-structify](entries/ollama-structify.md)** | Cuando necesitas convertir texto libre en JSON con un esquema definido, vía LLM local. | `/Users/braisrevalderia/ollama-structify` | [link](https://github.com/Obrais-cloud/ollama-structify) |
 | **[ollamatop](entries/ollamatop.md)** | En una pestaña fija: ver qué modelos hay vivos, carga y memoria por nodo, mientras trabajas. | `/Users/braisrevalderia/ollamatop` | [link](https://github.com/Obrais-cloud/ollamatop) |
 | **[ollamcp](entries/ollamcp.md)** | Cuando quieres montar un agente local con tools MCP sin pagar Claude API o Codex. | `/Users/braisrevalderia/ollamcp` | [link](https://github.com/Obrais-cloud/ollamcp) |
@@ -110,6 +113,7 @@ forja missing-gh           # cola de publicación (items sin github)
 | **[shotcall](entries/shotcall.md)** | Pre-producción: del Fountain a una shot list inicial que luego refinas en preparación de rodaje. | `/Users/braisrevalderia/shotcall` | [link](https://github.com/Obrais-cloud/shotcall) |
 | **[shotgen](entries/shotgen.md)** | Cuando quieres un animatic rápido para pitch/financiación o para previs sin storyboard artist. | `/Users/braisrevalderia/shotgen` | [link](https://github.com/Obrais-cloud/shotgen) |
 | **[Siliv](entries/siliv.md)** | Cuando trabajas con modelos grandes en M-series y necesitas vigilar/ajustar la asignación VRAM unificada desde la barra de menús. | `/Users/braisrevalderia/Siliv` | [link](https://github.com/Obrais-cloud/Siliv) |
+| **[sutton-dashboard](entries/sutton-dashboard.md)** | Reutilizar vistas de campañas y calendario al integrar fuentes verificadas; consultar forja status antes de operar. | `/Users/braisrevalderia/Documents/Codex/2026-09-04/qui/work/sutton-dashboard-review` | [link](https://github.com/Obrais-cloud/sutton-dashboard) |
 | **[takelog](entries/takelog.md)** | En el set, durante el rodaje: registrar takes contra la shot list sin papel y exportar limpio para edición. | `/Users/braisrevalderia/takelog` | [link](https://github.com/Obrais-cloud/takelog) |
 | **[toolprobe](entries/toolprobe.md)** | Antes de meter un modelo en un agente con tools: validar que dispara JSON tool calls correctamente. | `/Users/braisrevalderia/toolprobe` | [link](https://github.com/Obrais-cloud/toolprobe) |
 | **[visionlint](entries/visionlint.md)** | Pre-publicación: pasar capturas de una UI/diseño y obtener crítica de UX automatizada. | `/Users/braisrevalderia/visionlint` | [link](https://github.com/Obrais-cloud/visionlint) |

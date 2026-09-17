@@ -3,15 +3,15 @@
 | field | value |
 |---|---|
 | kind | `service` |
-| path | `/Volumes/X10 Pro_A/AIPR/fillos-mission-control` |
-| github | https://github.com/Obrais-cloud/fillos-mission-control |
+| path | `/Users/braisrevalderia/fillos-mission-control` |
+| github | https://github.com/Obrais-cloud/docs-mission-control |
 | version | — |
 | created | 2026-05-28 |
 | tags | documentary, nextjs, vercel, fillos-do-vento, docuflow |
 
-**What it is.** Dashboard Next.js 16 de tracking de submissions para proyectos documentales. Vercel KV + Claude AI para generar drafts. Privado en GitHub, desplegado en fillos-mission-control.vercel.app.
+**What it is.** Docs Mission Control: Next.js, Supabase Postgres (mc_kv/mc_sets), Vercel Blob y varios proveedores de IA. Alias conservado: fillos-mission-control.
 
-**When to reach for it.** Para gestionar todas las submissions de Fillos do Vento (festivales, grants, prensa, distribución) sin Notion/Airtable.
+**When to reach for it.** Gestionar proyectos de Cinexin, convocatorias, versiones documentales y borradores en https://docs-mission-control.vercel.app. La ruta local histórica no existe en la comprobación del 2026-09-05.
 
 ## Notes
 

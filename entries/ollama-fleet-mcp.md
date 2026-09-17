@@ -9,9 +9,9 @@
 | created | 2026-05-28 |
 | tags | ollama, mcp, claude-code, fleet |
 
-**What it is.** MCP server fleet-aware para Claude Code con routing inteligente y comparación de modelos.
+**What it is.** MCP server fleet-aware para Claude Code con routing inteligente y comparación de modelos. [Reescrito 2026-08-08 tras la pérdida del SSD X10 Pro_A — no es el código original.]
 
-**When to reach for it.** Cuando usas Claude Code y quieres exponer el fleet local como tools MCP (routing + bench desde dentro del agente).
+**When to reach for it.** Desde Claude Code, consultar salud y modelos de Mac Studio, Corsair y Alien18; generar o comparar con un encargo concreto. Inicialización MCP, seis herramientas y fleet_health verificados el 2026-09-05; inferencia no probada en esa consulta.
 
 ## Notes
 

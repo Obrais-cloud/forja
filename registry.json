@@ -68,8 +68,8 @@
       "name": "fillos-mission-control",
       "kind": "service",
       "path": "/Users/braisrevalderia/fillos-mission-control",
-      "description": "Dashboard Next.js 16 de tracking de submissions para proyectos documentales. Vercel KV + Claude AI para generar drafts. Privado en GitHub, desplegado en fillos-mission-control.vercel.app.",
-      "utility": "Para gestionar todas las submissions de Fillos do Vento (festivales, grants, prensa, distribución) sin Notion/Airtable.",
+      "description": "Docs Mission Control: Next.js, Supabase Postgres (mc_kv/mc_sets), Vercel Blob y varios proveedores de IA. Alias conservado: fillos-mission-control.",
+      "utility": "Gestionar proyectos de Cinexin, convocatorias, versiones documentales y borradores en https://docs-mission-control.vercel.app. La ruta local histórica no existe en la comprobación del 2026-09-05.",
       "tags": [
         "documentary",
         "nextjs",
@@ -77,9 +77,19 @@
         "fillos-do-vento",
         "docuflow"
       ],
-      "github": "https://github.com/Obrais-cloud/fillos-mission-control",
+      "github": "https://github.com/Obrais-cloud/docs-mission-control",
       "version": null,
-      "created_at": "2026-05-28"
+      "created_at": "2026-05-28",
+      "extra": {
+        "integration_verification": {
+          "observed_at": "2026-09-05T04:32:01.521283+00:00",
+          "canonical_project": "docs-mission-control",
+          "url": "https://docs-mission-control.vercel.app",
+          "historical_local_path_exists": false,
+          "deployed_commit": "29db6827273d1505cdd766cfd31676db189836d0",
+          "authenticated_workflow_tested": false
+        }
+      }
     },
     {
       "name": "ollapix",
@@ -100,6 +110,25 @@
       "github": "https://github.com/Obrais-cloud/ollapix",
       "version": "1.0",
       "created_at": "2026-09-03"
+    },
+    {
+      "name": "ticket-rerank",
+      "kind": "service",
+      "path": "/Users/braisrevalderia/ticket-rerank",
+      "description": "FastAPI service that reranks support tickets by urgency using TypeSafe (Jev / System One): one comparable Score per ticket, sorted desc",
+      "utility": "Cuando necesites priorizar/triage un lote de tickets de soporte por urgencia con un juicio semantico calibrado; expone POST /rerank",
+      "tags": [
+        "fastapi",
+        "typesafe",
+        "jev",
+        "support",
+        "triage",
+        "rerank",
+        "docker"
+      ],
+      "github": "https://github.com/Obrais-cloud/ticket-rerank",
+      "version": "0.1.0",
+      "created_at": "2026-09-17"
     },
     {
       "name": "chromacut",
@@ -208,6 +237,21 @@
       "github": "https://github.com/Obrais-cloud/clipvault",
       "version": null,
       "created_at": "2026-05-28"
+    },
+    {
+      "name": "cofounder-os",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/Documents/Codex/2026-09-04/qui/work/cofounder-os-review",
+      "description": "Aplicación de operaciones con tareas, aprobaciones, integraciones y métricas por organización.",
+      "utility": "Evaluar vistas y componentes de operaciones del portfolio; consultar status antes de conectar automatizaciones o reutilizar funciones.",
+      "tags": [
+        "portfolio",
+        "operations",
+        "review"
+      ],
+      "github": "https://github.com/Obrais-cloud/cofounder-os",
+      "version": "0.1.0",
+      "created_at": "2026-09-05"
     },
     {
       "name": "dailies",
@@ -885,7 +929,7 @@
       "kind": "tool",
       "path": "/Users/braisrevalderia/ollama-fleet-mcp",
       "description": "MCP server fleet-aware para Claude Code con routing inteligente y comparación de modelos. [Reescrito 2026-08-08 tras la pérdida del SSD X10 Pro_A — no es el código original.]",
-      "utility": "Cuando usas Claude Code y quieres exponer el fleet local como tools MCP (routing + bench desde dentro del agente).",
+      "utility": "Desde Claude Code, consultar salud y modelos de Mac Studio, Corsair y Alien18; generar o comparar con un encargo concreto. Inicialización MCP, seis herramientas y fleet_health verificados el 2026-09-05; inferencia no probada en esa consulta.",
       "tags": [
         "ollama",
         "mcp",
@@ -899,7 +943,7 @@
         "ollaverse": {
           "name": "ollama-fleet-mcp",
           "description": "Fleet-aware MCP server for Claude Code with smart routing and model comparison.",
-          "language": "TypeScript",
+          "language": "Python",
           "category": "Fleet",
           "icon": "{}",
           "color": "var(--pink)",
@@ -908,6 +952,18 @@
             "Smart routing preferring loaded models",
             "Pull models to specific nodes"
           ]
+        },
+        "integration_verification": {
+          "observed_at": "2026-09-05T04:32:01.521283+00:00",
+          "consumer": "Claude Code user-scope ollama-fleet",
+          "reachable_hosts": 3,
+          "model_counts": {
+            "mac-studio": 3,
+            "corsair": 3,
+            "alien18": 0
+          },
+          "inference_tested": false,
+          "receipt": "/Users/braisrevalderia/Documents/Codex/2026-09-04/qui/work/fleet-mcp-consumer-verification.json"
         }
       }
     },
@@ -1581,6 +1637,22 @@
       "github": "https://github.com/Obrais-cloud/Siliv",
       "version": null,
       "created_at": "2026-05-28"
+    },
+    {
+      "name": "sutton-dashboard",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/Documents/Codex/2026-09-04/qui/work/sutton-dashboard-review",
+      "description": "Interfaz de ejemplo para campañas y contenido de Sutton; no es una fuente de actividad real.",
+      "utility": "Reutilizar vistas de campañas y calendario al integrar fuentes verificadas; consultar forja status antes de operar.",
+      "tags": [
+        "sutton",
+        "content",
+        "dashboard",
+        "example"
+      ],
+      "github": "https://github.com/Obrais-cloud/sutton-dashboard",
+      "version": "0.1.0",
+      "created_at": "2026-09-05"
     },
     {
       "name": "takelog",
