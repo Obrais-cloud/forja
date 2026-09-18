@@ -2,7 +2,7 @@
 
 *Catálogo personal — todo lo que voy construyendo, con descripción y utilidad.*
 
-_81 items registrados. Fuente de verdad: `registry.json`. Páginas por item en `entries/`._
+_82 items registrados. Fuente de verdad: `registry.json`. Páginas por item en `entries/`._
 
 ## CLI
 ```
@@ -39,6 +39,7 @@ forja missing-gh           # cola de publicación (items sin github)
 | **[fillos-mission-control](entries/fillos-mission-control.md)** | Gestionar proyectos de Cinexin, convocatorias, versiones documentales y borradores en https://docs-mission-control.vercel.app. La ruta local histórica no existe en la comprobación del 2026-09-05. | `/Users/braisrevalderia/fillos-mission-control` | [link](https://github.com/Obrais-cloud/docs-mission-control) |
 | **[ollapix](entries/ollapix.md)** | Generar imagenes hiperrealistas (Pony V6 XL) bajo demanda desde agentes o remoto, serializado en la RTX 4090 | `/Users/braisrevalderia/ollapix` | [link](https://github.com/Obrais-cloud/ollapix) |
 | **[ticket-rerank](entries/ticket-rerank.md)** | Cuando necesites priorizar/triage un lote de tickets de soporte por urgencia con un juicio semantico calibrado; expone POST /rerank | `/Users/braisrevalderia/ticket-rerank` | [link](https://github.com/Obrais-cloud/ticket-rerank) |
+| **[typesafe-mcp](entries/typesafe-mcp.md)** | Cuando quieras que openclaw/hermes usen TypeSafe: juicios tipados, clasificación, rerank por criterio. Registrado como MCP stdio en la flota | `/Users/braisrevalderia/typesafe-mcp` | [link](https://github.com/Obrais-cloud/typesafe-mcp) |
 
 ## tool
 
