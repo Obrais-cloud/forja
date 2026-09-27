@@ -2,7 +2,7 @@
 
 *Catálogo personal — todo lo que voy construyendo, con descripción y utilidad.*
 
-_82 items registrados. Fuente de verdad: `registry.json`. Páginas por item en `entries/`._
+_84 items registrados. Fuente de verdad: `registry.json`. Páginas por item en `entries/`._
 
 ## CLI
 ```
@@ -53,6 +53,7 @@ forja missing-gh           # cola de publicación (items sin github)
 | **[cliplog](entries/cliplog.md)** | Cuando vuelves de rodaje con cientos de clips sin loggear y necesitas un shot log básico en minutos. | `/Users/braisrevalderia/cliplog` | [link](https://github.com/Obrais-cloud/cliplog) |
 | **[clipvault](entries/clipvault.md)** | Cuando quieres una biblioteca buscable por significado en lugar de por nombre de archivo, todo local. | `/Users/braisrevalderia/clipvault` | [link](https://github.com/Obrais-cloud/clipvault) |
 | **[cofounder-os](entries/cofounder-os.md)** | Evaluar vistas y componentes de operaciones del portfolio; consultar status antes de conectar automatizaciones o reutilizar funciones. | `/Users/braisrevalderia/Documents/Codex/2026-09-04/qui/work/cofounder-os-review` | [link](https://github.com/Obrais-cloud/cofounder-os) |
+| **[cuesheet](entries/cuesheet.md)** | Antes de entregar a festival/TV/agente de ventas: 'cuesheet timeline.edl -r rights.toml --strict' te da el music cue sheet y el informe de archivo que pide el checklist, y falla si alguna fuente no tiene derechos documentados. Pareja natural de speccheck (QC técnico → QC de derechos). | `/Users/braisrevalderia/cuesheet` | [link](https://github.com/Obrais-cloud/cuesheet) |
 | **[dailies](entries/dailies.md)** | Cuando terminas el día de rodaje y necesitas mandar dailies sin pasarte la noche montándolas. | `/Users/braisrevalderia/dailies` | [link](https://github.com/Obrais-cloud/dailies) |
 | **[filmkit](entries/filmkit.md)** | Para festivales/distribución: convertir notas en YAML en un press kit publicable. Útil para DOCUFLOW (Fillos do Vento). | `/Users/braisrevalderia/filmkit` | [link](https://github.com/Obrais-cloud/filmkit) |
 | **[fleetcheck](entries/fleetcheck.md)** | Por la mañana, ANTES de empezar: 'quién está vivo, qué responde, qué falla'. | `/Users/braisrevalderia/fleetcheck` | — |
@@ -114,6 +115,7 @@ forja missing-gh           # cola de publicación (items sin github)
 | **[shotcall](entries/shotcall.md)** | Pre-producción: del Fountain a una shot list inicial que luego refinas en preparación de rodaje. | `/Users/braisrevalderia/shotcall` | [link](https://github.com/Obrais-cloud/shotcall) |
 | **[shotgen](entries/shotgen.md)** | Cuando quieres un animatic rápido para pitch/financiación o para previs sin storyboard artist. | `/Users/braisrevalderia/shotgen` | [link](https://github.com/Obrais-cloud/shotgen) |
 | **[Siliv](entries/siliv.md)** | Cuando trabajas con modelos grandes en M-series y necesitas vigilar/ajustar la asignación VRAM unificada desde la barra de menús. | `/Users/braisrevalderia/Siliv` | [link](https://github.com/Obrais-cloud/Siliv) |
+| **[speccheck](entries/speccheck.md)** | Antes de mandar un máster a festival/broadcaster/plataforma o de cerrar un paquete de entrega: 'speccheck master.mov --spec X' te confirma que cumple, y 'speccheck carpeta/ --all' clasifica cada entregable a su preset (o marca el que no cuadra). Presets YAML propios o --from-brief con Ollama local. | `/Users/braisrevalderia/speccheck` | [link](https://github.com/Obrais-cloud/speccheck) |
 | **[sutton-dashboard](entries/sutton-dashboard.md)** | Reutilizar vistas de campañas y calendario al integrar fuentes verificadas; consultar forja status antes de operar. | `/Users/braisrevalderia/Documents/Codex/2026-09-04/qui/work/sutton-dashboard-review` | [link](https://github.com/Obrais-cloud/sutton-dashboard) |
 | **[takelog](entries/takelog.md)** | En el set, durante el rodaje: registrar takes contra la shot list sin papel y exportar limpio para edición. | `/Users/braisrevalderia/takelog` | [link](https://github.com/Obrais-cloud/takelog) |
 | **[toolprobe](entries/toolprobe.md)** | Antes de meter un modelo en un agente con tools: validar que dispara JSON tool calls correctamente. | `/Users/braisrevalderia/toolprobe` | [link](https://github.com/Obrais-cloud/toolprobe) |

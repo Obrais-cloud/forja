@@ -272,6 +272,29 @@
       "created_at": "2026-09-05"
     },
     {
+      "name": "cuesheet",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/cuesheet",
+      "description": "Lee un export de timeline (EDL CMX3600 de Resolve/Premiere/Avid o FCPXML/.fcpxmld) y genera cue sheet de música (título, compositor, editorial, SGAE/PRO, uso BI/VI…, TC in/out, duración) + informe de uso de archivo/stock con titular/licencia y tiempo en pantalla. Fusiona pares estéreo y usos contiguos, clips conectados y compounds; --init genera el TOML de derechos; --strict sale 2 si faltan datos.",
+      "utility": "Antes de entregar a festival/TV/agente de ventas: 'cuesheet timeline.edl -r rights.toml --strict' te da el music cue sheet y el informe de archivo que pide el checklist, y falla si alguna fuente no tiene derechos documentados. Pareja natural de speccheck (QC técnico → QC de derechos).",
+      "tags": [
+        "filmmaking",
+        "delivery",
+        "rights",
+        "music",
+        "cue-sheet",
+        "edl",
+        "fcpxml",
+        "cli",
+        "python",
+        "deterministic",
+        "fillos-do-vento"
+      ],
+      "github": "https://github.com/Obrais-cloud/cuesheet",
+      "version": "0.1.0",
+      "created_at": "2026-09-27"
+    },
+    {
       "name": "dailies",
       "kind": "tool",
       "path": "/Users/braisrevalderia/dailies",
@@ -1655,6 +1678,19 @@
       "github": "https://github.com/Obrais-cloud/Siliv",
       "version": null,
       "created_at": "2026-05-28"
+    },
+    {
+      "name": "speccheck",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/speccheck",
+      "description": "QC de entregables audiovisuales con ffprobe/ffmpeg: valida un vídeo (o una carpeta entera con --all) contra un spec de entrega — códec, resolución, fps, escaneo, pix_fmt, faststart mp4, audio, sample rate, loudness EBU R128/true peak. PASS/WARN/FAIL, exit≠0. 11 presets, incluidos los 4 de Fillos do Vento (feature DCP-source, TV 52min, instalación front-wall, VR) derivados de los másters reales.",
+      "utility": "Antes de mandar un máster a festival/broadcaster/plataforma o de cerrar un paquete de entrega: 'speccheck master.mov --spec X' te confirma que cumple, y 'speccheck carpeta/ --all' clasifica cada entregable a su preset (o marca el que no cuadra). Presets YAML propios o --from-brief con Ollama local.",
+      "tags": [
+        "video ffmpeg qc delivery filmmaking cli python deterministic fillos-do-vento"
+      ],
+      "github": "https://github.com/Obrais-cloud/speccheck",
+      "version": "0.2.0",
+      "created_at": "2026-09-24"
     },
     {
       "name": "sutton-dashboard",
