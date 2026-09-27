@@ -275,7 +275,7 @@
       "name": "cuesheet",
       "kind": "tool",
       "path": "/Users/braisrevalderia/cuesheet",
-      "description": "Lee un export de timeline (EDL CMX3600 de Resolve/Premiere/Avid o FCPXML/.fcpxmld) y genera cue sheet de música (título, compositor, editorial, SGAE/PRO, uso BI/VI…, TC in/out, duración) + informe de uso de archivo/stock con titular/licencia y tiempo en pantalla. Fusiona pares estéreo y usos contiguos, clips conectados y compounds; --init genera el TOML de derechos; --strict sale 2 si faltan datos.",
+      "description": "Lee un export de timeline (EDL CMX3600, FCP 7 XML de Resolve/Premiere o FCPXML/.fcpxmld) y genera cue sheet de música (título, compositor, editorial, SGAE/PRO, uso BI/VI…, TC in/out, duración) + informe de uso de archivo/stock con titular/licencia y tiempo en pantalla. Fusiona pares estéreo y usos contiguos, clips conectados y compounds; --init genera el TOML de derechos; --strict sale 2 si faltan datos. Formato no reconocido o timeline sin clips → exit 1 (nunca informe vacío). Validado con exports reales de Resolve de Fillos do Vento (sin música).",
       "utility": "Antes de entregar a festival/TV/agente de ventas: 'cuesheet timeline.edl -r rights.toml --strict' te da el music cue sheet y el informe de archivo que pide el checklist, y falla si alguna fuente no tiene derechos documentados. Pareja natural de speccheck (QC técnico → QC de derechos).",
       "tags": [
         "filmmaking",
@@ -291,14 +291,14 @@
         "fillos-do-vento"
       ],
       "github": "https://github.com/Obrais-cloud/cuesheet",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "created_at": "2026-09-27",
       "extra": {
         "ollaverse": {
           "name": "cuesheet",
-          "description": "Edit timeline to music cue sheet -- reads EDL/FCPXML exports and lists every music, archive and stock use with its rights data.",
+          "description": "Edit timeline to music cue sheet -- reads Resolve/Premiere/FCP exports and lists every music, archive and stock use with its rights data.",
           "features": [
-            "CMX3600 EDL + FCPXML/.fcpxmld: stereo pairs, connected clips and compounds merged into real cues",
+            "CMX3600 EDL, FCP 7 XML and FCPXML: stereo pairs, transitions, connected clips and compounds merged into real cues",
             "Cue sheet (composer, publisher, PRO, BI/VI usage, TC in/out) + archive/stock screen time",
             "--strict exits 2 on missing rights data -- a delivery gate next to speccheck"
           ],
