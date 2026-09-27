@@ -512,8 +512,7 @@ def _format_entry(e: dict) -> str:
     if "category" in e: parts.append(f"category: {q(e['category'])}")
     if "icon" in e: parts.append(f"icon: {q(e['icon'])}")
     if "color" in e:
-        c = e["color"]
-        parts.append(f"color: {c}" if c.startswith("var(") else f"color: {q(c)}")
+        parts.append(f"color: {q(e['color'])}")  # always a JS string: bare var(--x) is a syntax error
     return "{ " + ", ".join(parts) + " }"
 
 
