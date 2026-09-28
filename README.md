@@ -35,7 +35,7 @@ forja missing-gh           # cola de publicación (items sin github)
 | nombre | utilidad | ruta | github |
 |---|---|---|---|
 | **[agentcrew](entries/agentcrew.md)** | Cuando arranques la orquestación de agentes para coordinar varios workers vía NATS — está en estado germinal. | `/Users/braisrevalderia/agentcrew` | [link](https://github.com/Obrais-cloud/agentcrew) |
-| **[cinefactory-remote](entries/cinefactory-remote.md)** | Para decidir cuándo y con qué IA se edita Fillos, dirigir al coeditor y revisar su trabajo desde cualquier sitio: app /app o MCP 'cinefactory' desde Claude Code; en el Mac Studio, bin/cfr, bin/premontaje, bin/eleccion, bin/indice, bin/subtitula. | `/Users/braisrevalderia/cinefactory-remote` | — |
+| **[cinefactory-remote](entries/cinefactory-remote.md)** | Para decidir cuándo y con qué IA se edita Fillos, dirigir al coeditor y revisar su trabajo desde cualquier sitio: app /app o MCP 'cinefactory' desde Claude Code; en el Mac Studio, bin/cfr, bin/premontaje, bin/eleccion, bin/indice, bin/subtitula. | `/Users/braisrevalderia/cinefactory-remote` | [link](https://github.com/Obrais-cloud/cinefactory-remote) |
 | **[codex-appserver-reaper](entries/codex-appserver-reaper.md)** | Activo en cron de macmini — no se invoca manual. Ver ~/.hermes/logs/codex-reaper.log para auditar reaps. | `macmini:/Users/remotework/.openclaw/scripts/codex-appserver-reaper.py` | — |
 | **[fillos-mission-control](entries/fillos-mission-control.md)** | Gestionar proyectos de Cinexin, convocatorias, versiones documentales y borradores en https://docs-mission-control.vercel.app. La ruta local histórica no existe en la comprobación del 2026-09-05. | `/Users/braisrevalderia/fillos-mission-control` | [link](https://github.com/Obrais-cloud/docs-mission-control) |
 | **[ollapix](entries/ollapix.md)** | Generar imagenes hiperrealistas (Pony V6 XL) bajo demanda desde agentes o remoto, serializado en la RTX 4090 | `/Users/braisrevalderia/ollapix` | [link](https://github.com/Obrais-cloud/ollapix) |
@@ -47,7 +47,7 @@ forja missing-gh           # cola de publicación (items sin github)
 | nombre | utilidad | ruta | github |
 |---|---|---|---|
 | **[chromacut](entries/chromacut.md)** | Cuando necesitas analizar la paleta cromática de un metraje (timeline de color, color script post-rodaje). | `/Users/braisrevalderia/chromacut` | [link](https://github.com/Obrais-cloud/chromacut) |
-| **[cinefactory-tools](entries/cinefactory-tools.md)** | Para ofrecer las herramientas a otros productores sin instalar nada; base de la futura monetización con marca Cinefactory. | `/Users/braisrevalderia/cinefactory-tools` | — |
+| **[cinefactory-tools](entries/cinefactory-tools.md)** | Para ofrecer las herramientas a otros productores sin instalar nada; base de la futura monetización con marca Cinefactory. | `/Users/braisrevalderia/cinefactory-tools` | [link](https://github.com/Obrais-cloud/cinefactory-tools) |
 | **[claudecost](entries/claudecost.md)** | (auto-import desde github — escribe la utilidad real con forja edit) | `/Users/braisrevalderia/claudecost` | [link](https://github.com/Obrais-cloud/claudecost) |
 | **[claudelytics](entries/claudelytics.md)** | (auto-import desde github — escribe la utilidad real con forja edit) | `/Users/braisrevalderia/claudelytics` | [link](https://github.com/Obrais-cloud/claudelytics) |
 | **[claudesearch](entries/claudesearch.md)** | (auto-import desde github — escribe la utilidad real con forja edit) | `/Users/braisrevalderia/claudesearch` | [link](https://github.com/Obrais-cloud/claudesearch) |

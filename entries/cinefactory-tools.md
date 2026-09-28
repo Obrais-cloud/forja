@@ -4,7 +4,7 @@
 |---|---|
 | kind | `tool` |
 | path | `/Users/braisrevalderia/cinefactory-tools` |
-| github | — |
+| github | https://github.com/Obrais-cloud/cinefactory-tools |
 | version | 0.2.0 |
 | created | 2026-09-27 |
 | tags | cinefactory, web, tools, cuesheet, subtitles, pyodide, filmmaking, beta |

@@ -4,7 +4,7 @@
 |---|---|
 | kind | `service` |
 | path | `/Users/braisrevalderia/cinefactory-remote` |
-| github | — |
+| github | https://github.com/Obrais-cloud/cinefactory-remote |
 | version | 0.2.0 |
 | created | 2026-09-27 |
 | tags | cinefactory, fillos-do-vento, mcp, scheduler, coeditor, codex, claude, fleet, macstudio, resolve, subtitles |
