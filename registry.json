@@ -49,6 +49,29 @@
       "created_at": "2026-05-28"
     },
     {
+      "name": "cinefactory-remote",
+      "kind": "service",
+      "path": "/Users/braisrevalderia/cinefactory-remote",
+      "description": "Control y herramientas del coeditor de Cinefactory en el Mac Studio. Horario único por proveedor (codex|claude|local), puerta 'cfr gate', turno exclusivo, encargos, decisiones, cuota de cortes narrativos, límite de revisiones. App web de feedback (/app: revisiones, comentarios con TC, decisiones A/B con vídeo, encargos, actividad, horario). Sincronización horaria de comentarios de Shade. Herramientas: premontaje (escenas en Resolve con tarjeta de razonamiento), eleccion (renders de decisión A/B), indice (búsqueda en transcripciones de Resolve), subtitula (Whisper + glosario de Fillos + traducción local). MCP en Tailscale 100.68.94.14:11460 con token; 38 tests.",
+      "utility": "Para decidir cuándo y con qué IA se edita Fillos, dirigir al coeditor y revisar su trabajo desde cualquier sitio: app /app o MCP 'cinefactory' desde Claude Code; en el Mac Studio, bin/cfr, bin/premontaje, bin/eleccion, bin/indice, bin/subtitula.",
+      "tags": [
+        "cinefactory",
+        "fillos-do-vento",
+        "mcp",
+        "scheduler",
+        "coeditor",
+        "codex",
+        "claude",
+        "fleet",
+        "macstudio",
+        "resolve",
+        "subtitles"
+      ],
+      "github": null,
+      "version": "0.2.0",
+      "created_at": "2026-09-27"
+    },
+    {
       "name": "codex-appserver-reaper",
       "kind": "service",
       "path": "macmini:/Users/remotework/.openclaw/scripts/codex-appserver-reaper.py",
@@ -163,6 +186,26 @@
       "github": "https://github.com/Obrais-cloud/chromacut",
       "version": null,
       "created_at": "2026-05-28"
+    },
+    {
+      "name": "cinefactory-tools",
+      "kind": "tool",
+      "path": "/Users/braisrevalderia/cinefactory-tools",
+      "description": "Web Cinefactory Tools (beta): herramientas de postproducción que corren en el navegador con Pyodide, sin subir ficheros. cuesheet (cue sheet musical desde EDL/FCP7/FCPXML, idéntico a la CLI) y Subtítulos (SRT + glosario con cambios revisables uno a uno, QC de cps/líneas/duración/huecos, arreglar huecos, SRT/VTT/informe). Vercel: solo vista previa protegida (alias público retirado).",
+      "utility": "Para ofrecer las herramientas a otros productores sin instalar nada; base de la futura monetización con marca Cinefactory.",
+      "tags": [
+        "cinefactory",
+        "web",
+        "tools",
+        "cuesheet",
+        "subtitles",
+        "pyodide",
+        "filmmaking",
+        "beta"
+      ],
+      "github": null,
+      "version": "0.2.0",
+      "created_at": "2026-09-27"
     },
     {
       "name": "claudecost",

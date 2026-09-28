@@ -1,0 +1,18 @@
+# cinefactory-tools
+
+| field | value |
+|---|---|
+| kind | `tool` |
+| path | `/Users/braisrevalderia/cinefactory-tools` |
+| github | — |
+| version | 0.2.0 |
+| created | 2026-09-27 |
+| tags | cinefactory, web, tools, cuesheet, subtitles, pyodide, filmmaking, beta |
+
+**What it is.** Web Cinefactory Tools (beta): herramientas de postproducción que corren en el navegador con Pyodide, sin subir ficheros. cuesheet (cue sheet musical desde EDL/FCP7/FCPXML, idéntico a la CLI) y Subtítulos (SRT + glosario con cambios revisables uno a uno, QC de cps/líneas/duración/huecos, arreglar huecos, SRT/VTT/informe). Vercel: solo vista previa protegida (alias público retirado).
+
+**When to reach for it.** Para ofrecer las herramientas a otros productores sin instalar nada; base de la futura monetización con marca Cinefactory.
+
+## Notes
+
+*(free-form — anything you want to remember; `forja sync` won't overwrite this section.)*
