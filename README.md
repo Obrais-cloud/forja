@@ -28,7 +28,7 @@ forja missing-gh           # cola de publicación (items sin github)
 
 | nombre | utilidad | ruta | github |
 |---|---|---|---|
-| **[astra-guard](entries/astra-guard.md)** | Cuando algo (una actualización, un agente, un cambio manual) pueda cambiar el modelo principal o la cadena de respaldo de la flota y quieras que vuelva solo a lo decidido | `/Users/braisrevalderia/.local/bin/astra-guard.py` | — |
+| **[astra-guard](entries/astra-guard.md)** | Cuando algo (una actualización, un agente, un cambio manual) pueda cambiar el modelo principal o la cadena de respaldo de la flota y quieras que vuelva solo a lo decidido | `/Users/braisrevalderia/astra-guard` | [link](https://github.com/Obrais-cloud/astra-guard) |
 | **[hermes-codex-relogin](entries/hermes-codex-relogin.md)** | Cuando hermes falla con refresh_token_reused / context overflow. Se invoca a secas. Cubre el patrón hermes_codex_token_consumed_pattern. | `/Users/braisrevalderia/bin/hermes-codex-relogin.sh` | — |
 
 ## service
