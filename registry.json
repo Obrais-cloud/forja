@@ -115,6 +115,24 @@
       }
     },
     {
+      "name": "ollagate",
+      "kind": "service",
+      "path": "/Users/braisrevalderia/ollagate",
+      "description": "Gate bearer-token delante del Ollama local expuesto por Tailscale Funnel (:8443)",
+      "utility": "Cuando un servicio externo (dmc en Vercel) usa tu Ollama por Funnel y no quieres que cualquiera en internet lo use",
+      "tags": [
+        "ollama",
+        "security",
+        "proxy",
+        "tailscale",
+        "funnel",
+        "dmc"
+      ],
+      "github": "https://github.com/Obrais-cloud/ollagate",
+      "version": "0.1.0",
+      "created_at": "2026-09-27"
+    },
+    {
       "name": "ollapix",
       "kind": "service",
       "path": "/Users/braisrevalderia/ollapix",
