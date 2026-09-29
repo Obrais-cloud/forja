@@ -2,7 +2,7 @@
 
 *Catálogo personal — todo lo que voy construyendo, con descripción y utilidad.*
 
-_88 items registrados. Fuente de verdad: `registry.json`. Páginas por item en `entries/`._
+_90 items registrados. Fuente de verdad: `registry.json`. Páginas por item en `entries/`._
 
 ## CLI
 ```
@@ -23,12 +23,14 @@ forja missing-gh           # cola de publicación (items sin github)
 | nombre | utilidad | ruta | github |
 |---|---|---|---|
 | **[relogin-hermes.command](entries/relogin-hermes.command.md)** | Cuando hermes vuelve a caer y prefieres no abrir terminal — doble clic en el Escritorio. | `/Users/braisrevalderia/Desktop/Relogin Hermes gpt-5.5.command` | — |
+| **[yolo-daily](entries/yolo-daily.md)** | Cuando quieras que Claude trabaje solo cada noche buscando y construyendo algo útil; revisar el log del día por la mañana | `/Users/braisrevalderia/yolo-daily` | [link](https://github.com/Obrais-cloud/yolo-daily) |
 
 ## script
 
 | nombre | utilidad | ruta | github |
 |---|---|---|---|
 | **[astra-guard](entries/astra-guard.md)** | Cuando algo (una actualización, un agente, un cambio manual) pueda cambiar el modelo principal o la cadena de respaldo de la flota y quieras que vuelva solo a lo decidido | `/Users/braisrevalderia/astra-guard` | [link](https://github.com/Obrais-cloud/astra-guard) |
+| **[fleet-health](entries/fleet-health.md)** | Primer paso ante cualquier problema de la flota (lo pide el FLEET-RUNBOOK): ssh macmini 'bash ~/.openclaw/scripts/fleet-health.sh' | `macmini:/Users/remotework/.openclaw/scripts/fleet-health.sh` | — |
 | **[hermes-codex-relogin](entries/hermes-codex-relogin.md)** | Cuando hermes falla con refresh_token_reused / context overflow. Se invoca a secas. Cubre el patrón hermes_codex_token_consumed_pattern. | `/Users/braisrevalderia/bin/hermes-codex-relogin.sh` | — |
 
 ## service

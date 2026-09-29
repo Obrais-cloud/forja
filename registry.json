@@ -16,6 +16,23 @@
       "created_at": "2026-05-27"
     },
     {
+      "name": "yolo-daily",
+      "kind": "launcher",
+      "path": "/Users/braisrevalderia/yolo-daily",
+      "description": "Sesión diaria (02:00, launchd) de Claude Code con el skill /yolo en modo build; guarda la salida en logs/ (30 días). Corre con bypassPermissions",
+      "utility": "Cuando quieras que Claude trabaje solo cada noche buscando y construyendo algo útil; revisar el log del día por la mañana",
+      "tags": [
+        "claude-code",
+        "yolo",
+        "launchd",
+        "autonomo",
+        "macbook"
+      ],
+      "github": "https://github.com/Obrais-cloud/yolo-daily",
+      "version": "1.1.0",
+      "created_at": "2026-03-08"
+    },
+    {
       "name": "astra-guard",
       "kind": "script",
       "path": "/Users/braisrevalderia/astra-guard",
@@ -35,6 +52,24 @@
       "github": "https://github.com/Obrais-cloud/astra-guard",
       "version": "0.4.0",
       "created_at": "2026-09-28"
+    },
+    {
+      "name": "fleet-health",
+      "kind": "script",
+      "path": "macmini:/Users/remotework/.openclaw/scripts/fleet-health.sh",
+      "description": "Salud de la flota: comprueba que cada servicio SIRVE (HTTP/launchd/FDs/almacenamiento/modelos), no solo que exista; tabla humana o --check con alertas solo en cambios. Estados UP / DEGRADED / DOWN / OFF (desactivado a propósito)",
+      "utility": "Primer paso ante cualquier problema de la flota (lo pide el FLEET-RUNBOOK): ssh macmini 'bash ~/.openclaw/scripts/fleet-health.sh'",
+      "tags": [
+        "fleet",
+        "health",
+        "monitoring",
+        "launchd",
+        "macmini",
+        "runbook"
+      ],
+      "github": null,
+      "version": "2026.09.29",
+      "created_at": "2026-07-21"
     },
     {
       "name": "hermes-codex-relogin",
