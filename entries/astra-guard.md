@@ -3,8 +3,8 @@
 | field | value |
 |---|---|
 | kind | `script` |
-| path | `/Users/braisrevalderia/.local/bin/astra-guard.py` |
-| github | — |
+| path | `/Users/braisrevalderia/astra-guard` (instalado en `~/.local/bin/astra-guard.py` de MacBook, mini y Studio) |
+| github | https://github.com/Obrais-cloud/astra-guard |
 | version | 0.2.0 |
 | created | 2026-09-28 |
 | tags | models, fleet, guard, launchd, codex, hermes, openclaw, gpt-6-astra, corsair |
