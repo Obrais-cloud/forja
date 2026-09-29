@@ -3,8 +3,8 @@
 | field | value |
 |---|---|
 | kind | `script` |
-| path | `macmini:/Users/remotework/.openclaw/scripts/fleet-health.sh` |
-| github | — |
+| path | `/Users/braisrevalderia/fleet-health` (desplegado en `macmini:~/.openclaw/scripts/`) |
+| github | https://github.com/Obrais-cloud/fleet-health |
 | version | 2026.09.29 |
 | created | 2026-07-21 |
 | tags | fleet, health, monitoring, launchd, macmini, runbook |
@@ -17,5 +17,5 @@
 
 *(free-form — anything you want to remember; `forja sync` won't overwrite this section.)*
 
-**2026-09-29.** Añadido el estado **OFF**: un servicio con `launchctl disable` ya no cuenta como caído (antes paperclip salía DOWN aunque se desactivó a propósito el 20/09). Backup `fleet-health.sh.bak-*-pre-off` en el mini. Sin repositorio: vive en `~/.openclaw/scripts/` del mini y se copia cada noche con `hub-config-backup` (→ `~/FleetBackups-local` → Studio).
+**2026-09-29.** Añadido el estado **OFF**: un servicio con `launchctl disable` ya no cuenta como caído (antes paperclip salía DOWN aunque se desactivó a propósito el 20/09). Backup `fleet-health.sh.bak-*-pre-off` en el mini. Repo privado desde 2026-09-29: `./deploy.sh` instala en el mini con copia de seguridad y pasada real; `./pull.sh` trae cambios hechos directamente en el mini.
 

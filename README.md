@@ -30,7 +30,7 @@ forja missing-gh           # cola de publicación (items sin github)
 | nombre | utilidad | ruta | github |
 |---|---|---|---|
 | **[astra-guard](entries/astra-guard.md)** | Cuando algo (una actualización, un agente, un cambio manual) pueda cambiar el modelo principal o la cadena de respaldo de la flota y quieras que vuelva solo a lo decidido | `/Users/braisrevalderia/astra-guard` | [link](https://github.com/Obrais-cloud/astra-guard) |
-| **[fleet-health](entries/fleet-health.md)** | Primer paso ante cualquier problema de la flota (lo pide el FLEET-RUNBOOK): ssh macmini 'bash ~/.openclaw/scripts/fleet-health.sh' | `macmini:/Users/remotework/.openclaw/scripts/fleet-health.sh` | — |
+| **[fleet-health](entries/fleet-health.md)** | Primer paso ante cualquier problema de la flota (lo pide el FLEET-RUNBOOK): ssh macmini 'bash ~/.openclaw/scripts/fleet-health.sh' | `/Users/braisrevalderia/fleet-health` | [link](https://github.com/Obrais-cloud/fleet-health) |
 | **[hermes-codex-relogin](entries/hermes-codex-relogin.md)** | Cuando hermes falla con refresh_token_reused / context overflow. Se invoca a secas. Cubre el patrón hermes_codex_token_consumed_pattern. | `/Users/braisrevalderia/bin/hermes-codex-relogin.sh` | — |
 
 ## service
