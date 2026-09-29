@@ -5,11 +5,11 @@
 | kind | `script` |
 | path | `/Users/braisrevalderia/astra-guard` (instalado en `~/.local/bin/astra-guard.py` de MacBook, mini y Studio) |
 | github | https://github.com/Obrais-cloud/astra-guard |
-| version | 0.4.0 |
+| version | 0.5.0 |
 | created | 2026-09-28 |
 | tags | models, fleet, guard, launchd, codex, hermes, openclaw, gpt-6-astra, corsair |
 
-**What it is.** Guardián de modelos: mantiene gpt-6-astra como principal y Corsair qwen3.8:27b como respaldo en Codex, Hermes y el canónico de OpenClaw; restaura con copia de seguridad y avisa por Telegram
+**What it is.** Guardián de modelos: mantiene gpt-6-astra como principal y Corsair Nemotron 3 Super como respaldo en Codex, Hermes y el canónico de OpenClaw; restaura con copia de seguridad y avisa por Telegram
 
 **When to reach for it.** Cuando algo (una actualización, un agente, un cambio manual) pueda cambiar el modelo principal o la cadena de respaldo de la flota y quieras que vuelva solo a lo decidido
 
@@ -21,7 +21,7 @@
 
 **Qué vigila.**
 - Codex (`~/.codex/config.toml`): `model = "gpt-6-astra"`.
-- Hermes (`~/.hermes/config.yaml`): la cadena `fallback_providers` = Corsair qwen3.8:27b → gpt-5.6-terra. Solo toca un Hermes cuyo modelo principal ya sea astra (el principal lo impone `hermes-config-watchdog`).
+- Hermes (`~/.hermes/config.yaml`): la cadena `fallback_providers` = Corsair Nemotron 3 Super → gpt-5.6-terra. Solo toca un Hermes cuyo modelo principal ya sea astra (el principal lo impone `hermes-config-watchdog`).
 - OpenClaw: solo comprueba el canónico (`models-canonical.json`); lo impone `auto-repair.sh`.
 
 **Cambiar la decisión (v0.3).** En `~/astra-guard/astra-guard.py`: `CODEX_PRIMARY`, `HERMES_PRIMARY`, `OPENCLAW_DEFAULT` y `HERMES_FB`; después `./deploy.sh` (pruebas + instala en MacBook, mini y Studio + compara huella), y solo entonces cambiar las configuraciones (canónicos primero).
@@ -31,3 +31,5 @@
 **Incidente v0.1 (2026-09-28).** Una regex con `re.S` (DOTALL) borró ~900 líneas del `config.yaml` de Hermes en el mini y tocó un Hermes local ajeno en el MacBook. Restaurado en ~2 min desde sus copias `.bak-*-astra-guard`. v0.2: sin DOTALL y probado contra copias antes de instalar. Lección: nunca `re.S` para bloques YAML; probar guardianes que reescriben config contra copias.
 
 **v0.4 (2026-09-29).** Avisa por Telegram (una vez por actualización) si el gateway de OpenClaw corre con un Node que Homebrew ha borrado; en ese estado el proveedor openai falla con `spawn … ENOENT` y los agentes caen a los respaldos. Arreglo: reiniciar `ai.openclaw.gateway` con disco holgado.
+
+**v0.5 (2026-09-29).** El respaldo pasa de Corsair qwen3.8:27b a **Corsair Nemotron 3 Super** (`nemotron-3-super:120b-a12b`), elegido con Jev por calidad (único bueno en resumen fiel, JSON de herramienta y planificación). Cadena: gpt-6-astra → Nemotron → gpt-5.6-terra. Requiere `num_ctx 131072` fijado en Corsair y `timeoutSeconds 360` en el proveedor de OpenClaw.

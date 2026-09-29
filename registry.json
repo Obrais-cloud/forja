@@ -36,7 +36,7 @@
       "name": "astra-guard",
       "kind": "script",
       "path": "/Users/braisrevalderia/astra-guard",
-      "description": "Guardián de modelos: mantiene gpt-6-astra como principal y Corsair qwen3.8:27b como respaldo en Codex, Hermes y el canónico de OpenClaw; restaura con copia de seguridad y avisa por Telegram",
+      "description": "Guardián de modelos: mantiene gpt-6-astra como principal y Corsair Nemotron 3 Super como respaldo en Codex, Hermes y el canónico de OpenClaw; restaura con copia de seguridad y avisa por Telegram",
       "utility": "Cuando algo (una actualización, un agente, un cambio manual) pueda cambiar el modelo principal o la cadena de respaldo de la flota y quieras que vuelva solo a lo decidido",
       "tags": [
         "models",
@@ -50,7 +50,7 @@
         "corsair"
       ],
       "github": "https://github.com/Obrais-cloud/astra-guard",
-      "version": "0.4.0",
+      "version": "0.5.0",
       "created_at": "2026-09-28"
     },
     {
