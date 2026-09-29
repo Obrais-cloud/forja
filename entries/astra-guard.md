@@ -5,7 +5,7 @@
 | kind | `script` |
 | path | `/Users/braisrevalderia/astra-guard` (instalado en `~/.local/bin/astra-guard.py` de MacBook, mini y Studio) |
 | github | https://github.com/Obrais-cloud/astra-guard |
-| version | 0.3.0 |
+| version | 0.4.0 |
 | created | 2026-09-28 |
 | tags | models, fleet, guard, launchd, codex, hermes, openclaw, gpt-6-astra, corsair |
 
@@ -30,3 +30,4 @@
 
 **Incidente v0.1 (2026-09-28).** Una regex con `re.S` (DOTALL) borró ~900 líneas del `config.yaml` de Hermes en el mini y tocó un Hermes local ajeno en el MacBook. Restaurado en ~2 min desde sus copias `.bak-*-astra-guard`. v0.2: sin DOTALL y probado contra copias antes de instalar. Lección: nunca `re.S` para bloques YAML; probar guardianes que reescriben config contra copias.
 
+**v0.4 (2026-09-29).** Avisa por Telegram (una vez por actualización) si el gateway de OpenClaw corre con un Node que Homebrew ha borrado; en ese estado el proveedor openai falla con `spawn … ENOENT` y los agentes caen a los respaldos. Arreglo: reiniciar `ai.openclaw.gateway` con disco holgado.
