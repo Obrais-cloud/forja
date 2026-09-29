@@ -5,7 +5,7 @@
 | kind | `tool` |
 | path | `/Users/braisrevalderia/cinefactory-tools` |
 | github | https://github.com/Obrais-cloud/cinefactory-tools |
-| version | 0.2.0 |
+| version | 0.3.0 |
 | created | 2026-09-27 |
 | tags | cinefactory, web, tools, cuesheet, subtitles, pyodide, filmmaking, beta |
 
@@ -16,3 +16,5 @@
 ## Notes
 
 *(free-form — anything you want to remember; `forja sync` won't overwrite this section.)*
+
+**0.3.0 (2026-09-29).** Portada de lanzamiento (para quién, privacidad, cómo funciona, precio en beta, FAQ) y `/privacidad/`, ES/EN. Plan interno en `LANZAMIENTO.md` (dominio `tools.cinefactory.studio` propuesto, precios orientativos sin validar), excluido del despliegue. Solo vista previa protegida; no publicado.
