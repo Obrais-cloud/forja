@@ -5,7 +5,7 @@
 | kind | `service` |
 | path | `/Users/braisrevalderia/cinefactory-remote` |
 | github | https://github.com/Obrais-cloud/cinefactory-remote |
-| version | 0.2.0 |
+| version | 0.3.0 |
 | created | 2026-09-27 |
 | tags | cinefactory, fillos-do-vento, mcp, scheduler, coeditor, codex, claude, fleet, macstudio, resolve, subtitles |
 
@@ -16,3 +16,5 @@
 ## Notes
 
 *(free-form — anything you want to remember; `forja sync` won't overwrite this section.)*
+
+**0.3.0 (2026-09-28).** Avisos: `cfr/avisos.py` en el mini (parte de la noche 08:50 y vigía cada 15 min por Telegram, lee `/api/salud`). MCP también en Hermes principal y OpenClaw (`chief-of-staff`, `main`) con lista blanca de 8 herramientas; Codex del MacBook con lecturas auto-aprobadas. App con pestañas enlazables (`#ab`, `#rev`…). Revisión de derechos en cada premontaje (`bin/derechos`: cuesheet + reglas del largo; marca sin licencia, efectos de librería y audio sin clasificar).

@@ -74,7 +74,7 @@
       "kind": "service",
       "path": "/Users/braisrevalderia/cinefactory-remote",
       "description": "Control y herramientas del coeditor de Cinefactory en el Mac Studio. Horario único por proveedor (codex|claude|local), puerta 'cfr gate', turno exclusivo, encargos, decisiones, cuota de cortes narrativos, límite de revisiones. App web de feedback (/app: revisiones, comentarios con TC, decisiones A/B con vídeo, encargos, actividad, horario). Sincronización horaria de comentarios de Shade. Herramientas: premontaje (escenas en Resolve con tarjeta de razonamiento), eleccion (renders de decisión A/B), indice (búsqueda en transcripciones de Resolve), subtitula (Whisper + glosario de Fillos + traducción local). MCP en Tailscale 100.68.94.14:11460 con token; 38 tests.",
-      "utility": "Para decidir cuándo y con qué IA se edita Fillos, dirigir al coeditor y revisar su trabajo desde cualquier sitio: app /app o MCP 'cinefactory' desde Claude Code; en el Mac Studio, bin/cfr, bin/premontaje, bin/eleccion, bin/indice, bin/subtitula.",
+      "utility": "Para decidir cuándo y con qué IA se edita Fillos, dirigir al coeditor y revisar su trabajo desde cualquier sitio: app /app o MCP 'cinefactory' desde Claude Code; en el Mac Studio, bin/cfr, bin/premontaje, bin/eleccion, bin/indice, bin/subtitula, bin/derechos; parte 08:50 y vigía nocturno por Telegram desde el mini (cfr/avisos.py).",
       "tags": [
         "cinefactory",
         "fillos-do-vento",
@@ -89,7 +89,7 @@
         "subtitles"
       ],
       "github": "https://github.com/Obrais-cloud/cinefactory-remote",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "created_at": "2026-09-27"
     },
     {
