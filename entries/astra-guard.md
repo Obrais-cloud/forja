@@ -5,7 +5,7 @@
 | kind | `script` |
 | path | `/Users/braisrevalderia/astra-guard` (instalado en `~/.local/bin/astra-guard.py` de MacBook, mini y Studio) |
 | github | https://github.com/Obrais-cloud/astra-guard |
-| version | 0.2.0 |
+| version | 0.3.0 |
 | created | 2026-09-28 |
 | tags | models, fleet, guard, launchd, codex, hermes, openclaw, gpt-6-astra, corsair |
 
@@ -24,7 +24,9 @@
 - Hermes (`~/.hermes/config.yaml`): la cadena `fallback_providers` = Corsair qwen3.8:27b → gpt-5.6-terra. Solo toca un Hermes cuyo modelo principal ya sea astra (el principal lo impone `hermes-config-watchdog`).
 - OpenClaw: solo comprueba el canónico (`models-canonical.json`); lo impone `auto-repair.sh`.
 
-**Cambiar la decisión.** Editar `PRIMARY` / `HERMES_FB` del script en las tres máquinas ANTES que las configuraciones, o el guardián las revertirá.
+**Cambiar la decisión (v0.3).** En `~/astra-guard/astra-guard.py`: `CODEX_PRIMARY`, `HERMES_PRIMARY`, `OPENCLAW_DEFAULT` y `HERMES_FB`; después `./deploy.sh` (pruebas + instala en MacBook, mini y Studio + compara huella), y solo entonces cambiar las configuraciones (canónicos primero).
+
+**Disponibilidad GPT-6 (2026-09-29).** Con la cuenta de ChatGPT, en OpenClaw/Hermes solo funciona gpt-6-astra; sol y luna dan 400 "not supported when using Codex with a ChatGPT account" (en el Codex CLI del MacBook sí responden). Un reparto astra/sol se intentó y se revirtió.
 
 **Incidente v0.1 (2026-09-28).** Una regex con `re.S` (DOTALL) borró ~900 líneas del `config.yaml` de Hermes en el mini y tocó un Hermes local ajeno en el MacBook. Restaurado en ~2 min desde sus copias `.bak-*-astra-guard`. v0.2: sin DOTALL y probado contra copias antes de instalar. Lección: nunca `re.S` para bloques YAML; probar guardianes que reescriben config contra copias.
 
