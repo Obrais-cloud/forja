@@ -5,7 +5,7 @@
 | kind | `service` |
 | path | `/Users/braisrevalderia/cinefactory-remote` |
 | github | https://github.com/Obrais-cloud/cinefactory-remote |
-| version | 0.4.0 |
+| version | 0.5.0 |
 | created | 2026-09-27 |
 | tags | cinefactory, fillos-do-vento, mcp, scheduler, coeditor, codex, claude, fleet, macstudio, resolve, subtitles |
 
@@ -20,3 +20,5 @@
 **0.3.0 (2026-09-28).** Avisos: `cfr/avisos.py` en el mini (parte de la noche 08:50 y vigía cada 15 min por Telegram, lee `/api/salud`). MCP también en Hermes principal y OpenClaw (`chief-of-staff`, `main`) con lista blanca de 8 herramientas; Codex del MacBook con lecturas auto-aprobadas. App con pestañas enlazables (`#ab`, `#rev`…). Revisión de derechos en cada premontaje (`bin/derechos`: cuesheet + reglas del largo; marca sin licencia, efectos de librería y audio sin clasificar).
 
 **0.4.0 (2026-09-28).** Dictado por voz en la app: «🎙 Dictar» en revisiones y 🎙 en la nota A/B (con el minuto del vídeo); `POST /api/voz` transcribe en el Studio con mlx-whisper y el glosario de Fillos, borra el audio y solo rellena el cuadro. La app también por HTTPS dentro de la tailnet (`https://admins-mac-studio.tail79cef6.ts.net/app`, `tailscale serve` → 127.0.0.1; `also_localhost` en el servidor).
+
+**0.5.0 (2026-09-28).** Tablero de estado: pestaña «Tablero» (`#tab`) y `GET /api/tablero` con piezas (largo, corto, social) y premontajes por bloque (última versión de cada escena; aprobado / cambios / pendiente de Brais; derechos). % de avance solo si se definen objetivos en `state/estructura.json`. El parte de las 08:50 incluye la línea de totales y sus enlaces van por HTTPS.
