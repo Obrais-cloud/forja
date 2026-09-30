@@ -2,7 +2,7 @@
 
 *Catálogo personal — todo lo que voy construyendo, con descripción y utilidad.*
 
-_90 items registrados. Fuente de verdad: `registry.json`. Páginas por item en `entries/`._
+_91 items registrados. Fuente de verdad: `registry.json`. Páginas por item en `entries/`._
 
 ## CLI
 ```
@@ -50,6 +50,7 @@ forja missing-gh           # cola de publicación (items sin github)
 
 | nombre | utilidad | ruta | github |
 |---|---|---|---|
+| **[ccsl](entries/ccsl.md)** | Cuando un agente de ventas o una TV pida el CCSL o dialogue list: 'ccsl locked.edl --srt en.srt --notes planos.csv -f docx -o CCSL.docx'. También sirve para comprobar el timing de los subtítulos frente a los cortes antes de entregar (--qc --strict). Va después de speccheck y cuesheet. | `/Users/braisrevalderia/ccsl` | [link](https://github.com/Obrais-cloud/ccsl) |
 | **[chromacut](entries/chromacut.md)** | Cuando necesitas analizar la paleta cromática de un metraje (timeline de color, color script post-rodaje). | `/Users/braisrevalderia/chromacut` | [link](https://github.com/Obrais-cloud/chromacut) |
 | **[cinefactory-tools](entries/cinefactory-tools.md)** | Para ofrecer las herramientas a otros productores sin instalar nada; base de la futura monetización con marca Cinefactory. | `/Users/braisrevalderia/cinefactory-tools` | [link](https://github.com/Obrais-cloud/cinefactory-tools) |
 | **[claudecost](entries/claudecost.md)** | (auto-import desde github — escribe la utilidad real con forja edit) | `/Users/braisrevalderia/claudecost` | [link](https://github.com/Obrais-cloud/claudecost) |
